@@ -1,0 +1,107 @@
+/* Ortho no Kata : styles communs. Mobile d'abord, gros boutons, peu de texte. */
+:root {
+  --fond: #faf7f2;
+  --carte: #ffffff;
+  --texte: #1f2430;
+  --discret: #5d6577;
+  --accent: #2f5fd0;
+  --accent-fonce: #2449a6;
+  --juste: #1f8f4e;
+  --juste-fond: #e3f5ea;
+  --revoir: #b8570b;
+  --revoir-fond: #fdeedd;
+  --bord: #d9d4ca;
+  --rayon: 18px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #14171f; --carte: #1e2330; --texte: #eef0f5; --discret: #a3abbd;
+    --accent: #7ea2ff; --accent-fonce: #a7bfff; --juste: #5fd391; --juste-fond: #173826;
+    --revoir: #ffb066; --revoir-fond: #3b2713; --bord: #343b4d;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--fond); color: var(--texte);
+  font: 20px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh; min-height: 100dvh;
+}
+main { max-width: 640px; margin: 0 auto; padding: 16px 16px 40px; }
+h1 { font-size: 1.5rem; margin: 8px 0 4px; }
+h2 { font-size: 1.15rem; margin: 24px 0 8px; }
+p { margin: 8px 0; }
+.discret { color: var(--discret); font-size: .85rem; }
+button, .bouton {
+  font: inherit; cursor: pointer; border-radius: var(--rayon); border: 2px solid var(--bord);
+  background: var(--carte); color: var(--texte); padding: 14px 18px; min-height: 56px;
+  text-align: center; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+}
+button:focus-visible, .bouton:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.principal { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+.principal:active { background: var(--accent-fonce); }
+.entete { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.retour { min-height: 44px; padding: 8px 14px; font-size: .9rem; }
+.bandeau {
+  position: sticky; top: 0; z-index: 5; display: none; gap: 12px; align-items: center; justify-content: space-between;
+  background: var(--accent); color: #fff; padding: 10px 16px; font-size: .9rem;
+}
+.bandeau.visible { display: flex; }
+.bandeau button { min-height: 40px; padding: 6px 14px; background: #fff; color: var(--accent-fonce); border: 0; font-weight: 600; }
+
+/* Menu */
+.themes { display: grid; gap: 12px; margin-top: 12px; }
+.theme {
+  display: block; width: 100%; text-align: left; padding: 16px 18px; background: var(--carte);
+  border: 2px solid var(--bord); border-radius: var(--rayon); color: inherit; text-decoration: none;
+}
+.theme:active { border-color: var(--accent); }
+.theme .nom { font-size: 1.35rem; font-weight: 700; }
+.theme .astuce { color: var(--discret); font-size: .85rem; margin: 2px 0 10px; }
+.barre { height: 10px; background: var(--bord); border-radius: 999px; overflow: hidden; }
+.barre > i { display: block; height: 100%; background: var(--juste); }
+.theme .etat { font-size: .8rem; color: var(--discret); margin-top: 6px; }
+.reglages { display: grid; gap: 10px; margin-top: 8px; }
+.ligne { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.ligne button { flex: 1 1 120px; }
+.choix.actif { border-color: var(--accent); background: var(--accent); color: #fff; }
+
+/* Duel */
+.jeu { display: grid; gap: 16px; }
+.points { display: flex; gap: 8px; justify-content: center; margin: 6px 0 2px; }
+.points i { width: 14px; height: 14px; border-radius: 50%; background: var(--bord); }
+.points i.fait { background: var(--accent); }
+.points i.courant { outline: 3px solid var(--accent); outline-offset: 2px; }
+.theme-titre { text-align: center; font-weight: 700; font-size: 1.1rem; color: var(--accent); }
+.phrase {
+  background: var(--carte); border: 2px solid var(--bord); border-radius: var(--rayon);
+  padding: 22px 18px; font-size: 1.6rem; line-height: 1.4; text-align: center;
+}
+.trou { display: inline-block; min-width: 2.2em; border-bottom: 4px solid var(--accent); }
+.mot-juste { font-weight: 800; color: var(--juste); }
+.consigne { text-align: center; color: var(--discret); font-size: .95rem; }
+.temoin { text-align: center; font-size: 1.3rem; font-style: italic; padding: 4px 8px; }
+.temoin b { color: var(--accent); font-style: normal; }
+.reponses { display: grid; gap: 12px; }
+.reponses.deux { grid-template-columns: 1fr 1fr; }
+.reponses button { font-size: 1.15rem; min-height: 72px; }
+.reponses.choisir button { font-size: 1.2rem; line-height: 1.35; }
+.reponses button.juste { background: var(--juste-fond); border-color: var(--juste); color: var(--juste); font-weight: 700; }
+.reponses button.autre { background: var(--revoir-fond); border-color: var(--revoir); color: var(--revoir); }
+.reponses button:disabled { cursor: default; opacity: 1; }
+.retour-info { border-radius: var(--rayon); padding: 14px 16px; text-align: center; }
+.retour-info.juste { background: var(--juste-fond); color: var(--juste); }
+.retour-info.revoir { background: var(--revoir-fond); color: var(--revoir); }
+.retour-info strong { display: block; font-size: 1.15rem; }
+.retour-info .regle { color: var(--texte); font-size: .9rem; margin-top: 6px; }
+.actions { display: grid; gap: 10px; }
+.voix { min-height: 44px; font-size: .9rem; padding: 6px 14px; justify-self: center; }
+
+/* Bilan */
+.bilan { text-align: center; display: grid; gap: 14px; }
+.bilan .gros { font-size: 2.4rem; font-weight: 800; color: var(--accent); }
+.revoir-liste { text-align: left; background: var(--revoir-fond); border-radius: var(--rayon); padding: 12px 16px; }
+.revoir-liste ul { margin: 6px 0 0; padding-left: 20px; }
+@media (prefers-reduced-motion: no-preference) {
+  .reponses button, .theme { transition: background .15s, border-color .15s; }
+}

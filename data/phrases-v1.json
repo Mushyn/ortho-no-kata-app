@@ -1,0 +1,1870 @@
+{
+  "version": "0.1",
+  "description": "Phrases à trou de la v1. Toutes les phrases sont à relire : champ valide à passer à true après relecture. Les règles testées sont sourcées dans TRUCS.md (références S1 à S38).",
+  "blank": "___",
+  "families": {
+    "a_a": {
+      "label": "a / à",
+      "question": "Je mets « avait » à la place : ça sonne juste ?",
+      "witness": "avait",
+      "confirms": [
+        "a"
+      ],
+      "otherwise": "à",
+      "sources": [
+        "S1",
+        "S7"
+      ],
+      "theme": "a ou à"
+    },
+    "on_ont": {
+      "label": "on / ont",
+      "question": "Je mets « avaient » à la place : ça sonne juste ?",
+      "witness": "avaient",
+      "confirms": [
+        "ont"
+      ],
+      "otherwise": "on",
+      "sources": [
+        "S1",
+        "S7"
+      ],
+      "theme": "on ou ont"
+    },
+    "et_est_es": {
+      "label": "et / est / es",
+      "sources": [
+        "S7",
+        "S33",
+        "S34"
+      ],
+      "variants": {
+        "est|et": {
+          "theme": "et ou est",
+          "question": "Je mets « était » à la place : ça sonne juste ?",
+          "witness": "était",
+          "confirms": [
+            "est"
+          ],
+          "otherwise": "et"
+        },
+        "es|est": {
+          "theme": "es ou est",
+          "question": "Je mets « étais » à la place : ça sonne juste ?",
+          "witness": "étais",
+          "confirms": [
+            "es"
+          ],
+          "otherwise": "est",
+          "rule": "TU ES : es ne s'écrit qu'avec tu"
+        }
+      }
+    },
+    "son_sont": {
+      "label": "son / sont",
+      "question": "Je mets « mon » à la place : ça sonne juste ?",
+      "witness": "mon",
+      "confirms": [
+        "son"
+      ],
+      "otherwise": "sont",
+      "sources": [
+        "S7",
+        "S33"
+      ],
+      "theme": "son ou sont"
+    },
+    "ou_ou": {
+      "label": "ou / où",
+      "question": "Je mets « ou bien » à la place : ça sonne juste ?",
+      "witness": "ou bien",
+      "confirms": [
+        "ou"
+      ],
+      "otherwise": "où",
+      "sources": [
+        "S7",
+        "S38"
+      ],
+      "theme": "ou ou où"
+    },
+    "er_e": {
+      "label": "-er / -é",
+      "question": "Je dis la phrase avec « mordre », puis avec « mordu » : laquelle sonne juste ?",
+      "witnessPair": {
+        "er": "mordre",
+        "é": "mordu"
+      },
+      "sources": [
+        "S3",
+        "S35",
+        "S36",
+        "S37"
+      ],
+      "theme": "-er ou -é",
+      "attendu": 60
+    }
+  },
+  "items": [
+    {
+      "id": "a-01",
+      "family": "a_a",
+      "text": "Il ___ faim.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "a",
+      "valide": false
+    },
+    {
+      "id": "a-02",
+      "family": "a_a",
+      "text": "Nous allons ___ la plage.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "à",
+      "valide": false
+    },
+    {
+      "id": "a-03",
+      "family": "a_a",
+      "text": "Elle ___ un chat noir.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "a",
+      "valide": false
+    },
+    {
+      "id": "a-04",
+      "family": "a_a",
+      "text": "Il pense ___ ses vacances.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "à",
+      "valide": false
+    },
+    {
+      "id": "a-05",
+      "family": "a_a",
+      "text": "Le garçon ___ un vélo rouge.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "a",
+      "valide": false
+    },
+    {
+      "id": "a-06",
+      "family": "a_a",
+      "text": "Elle parle ___ son ami.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "à",
+      "valide": false
+    },
+    {
+      "id": "a-07",
+      "family": "a_a",
+      "text": "Mon frère ___ dix ans.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "a",
+      "valide": false
+    },
+    {
+      "id": "a-08",
+      "family": "a_a",
+      "text": "Le train arrive ___ midi.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "à",
+      "valide": false
+    },
+    {
+      "id": "a-09",
+      "family": "a_a",
+      "text": "La maison ___ un grand jardin.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "a",
+      "valide": false
+    },
+    {
+      "id": "a-10",
+      "family": "a_a",
+      "text": "Ce livre est ___ Paul.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "à",
+      "valide": false
+    },
+    {
+      "id": "a-11",
+      "family": "a_a",
+      "text": "Il y ___ du pain sur la table.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "a",
+      "valide": false
+    },
+    {
+      "id": "a-12",
+      "family": "a_a",
+      "text": "Cette maison est ___ vendre.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "à",
+      "valide": false
+    },
+    {
+      "id": "a-13",
+      "family": "a_a",
+      "text": "Ma sœur ___ perdu ses clés.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "a",
+      "valide": false
+    },
+    {
+      "id": "a-14",
+      "family": "a_a",
+      "text": "Je donne un cadeau ___ ma mère.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "à",
+      "valide": false
+    },
+    {
+      "id": "a-15",
+      "family": "a_a",
+      "text": "Le chien ___ mangé ses croquettes.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "a",
+      "valide": false
+    },
+    {
+      "id": "a-16",
+      "family": "a_a",
+      "text": "Tu habites ___ Paris ?",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "à",
+      "valide": false
+    },
+    {
+      "id": "a-17",
+      "family": "a_a",
+      "text": "Cet enfant ___ de la chance.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "a",
+      "valide": false
+    },
+    {
+      "id": "a-18",
+      "family": "a_a",
+      "text": "Il commence ___ pleuvoir.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "à",
+      "valide": false
+    },
+    {
+      "id": "a-19",
+      "family": "a_a",
+      "text": "Léa ___ mal à la tête.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "a",
+      "valide": false
+    },
+    {
+      "id": "a-20",
+      "family": "a_a",
+      "text": "Nous mangeons ___ la cantine.",
+      "choices": [
+        "a",
+        "à"
+      ],
+      "answer": "à",
+      "valide": false
+    },
+    {
+      "id": "on-01",
+      "family": "on_ont",
+      "text": "Ce soir, ___ part en vacances.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "on",
+      "valide": false
+    },
+    {
+      "id": "on-02",
+      "family": "on_ont",
+      "text": "Les enfants ___ faim.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "ont",
+      "valide": false
+    },
+    {
+      "id": "on-03",
+      "family": "on_ont",
+      "text": "Tu sais qu'___ part demain ?",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "on",
+      "valide": false
+    },
+    {
+      "id": "on-04",
+      "family": "on_ont",
+      "text": "Hier, les voisins ___ mangé une glace.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "ont",
+      "valide": false
+    },
+    {
+      "id": "on-05",
+      "family": "on_ont",
+      "text": "À l'école ___ apprend à lire.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "on",
+      "valide": false
+    },
+    {
+      "id": "on-06",
+      "family": "on_ont",
+      "text": "Mes parents ___ une voiture.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "ont",
+      "valide": false
+    },
+    {
+      "id": "on-07",
+      "family": "on_ont",
+      "text": "Les enfants disent qu'___ rentre tard.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "on",
+      "valide": false
+    },
+    {
+      "id": "on-08",
+      "family": "on_ont",
+      "text": "Ils ___ gagné le match.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "ont",
+      "valide": false
+    },
+    {
+      "id": "on-09",
+      "family": "on_ont",
+      "text": "Ici ___ parle français.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "on",
+      "valide": false
+    },
+    {
+      "id": "on-10",
+      "family": "on_ont",
+      "text": "Les chats ___ peur du bruit.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "ont",
+      "valide": false
+    },
+    {
+      "id": "on-11",
+      "family": "on_ont",
+      "text": "Si tu veux, ___ peut jouer dehors.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "on",
+      "valide": false
+    },
+    {
+      "id": "on-12",
+      "family": "on_ont",
+      "text": "Ce matin, mes amis ___ fini leurs devoirs.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "ont",
+      "valide": false
+    },
+    {
+      "id": "on-13",
+      "family": "on_ont",
+      "text": "Mes parents pensent qu'___ a raison.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "on",
+      "valide": false
+    },
+    {
+      "id": "on-14",
+      "family": "on_ont",
+      "text": "Elles ___ un grand jardin.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "ont",
+      "valide": false
+    },
+    {
+      "id": "on-15",
+      "family": "on_ont",
+      "text": "Quand il pleut, ___ reste à la maison.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "on",
+      "valide": false
+    },
+    {
+      "id": "on-16",
+      "family": "on_ont",
+      "text": "Ces filles ___ de la chance.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "ont",
+      "valide": false
+    },
+    {
+      "id": "on-17",
+      "family": "on_ont",
+      "text": "Avec toi ___ rit toujours.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "on",
+      "valide": false
+    },
+    {
+      "id": "on-18",
+      "family": "on_ont",
+      "text": "Au parc, les enfants ___ joué au ballon.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "ont",
+      "valide": false
+    },
+    {
+      "id": "on-19",
+      "family": "on_ont",
+      "text": "En été ___ joue dehors.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "on",
+      "valide": false
+    },
+    {
+      "id": "on-20",
+      "family": "on_ont",
+      "text": "Mes cousins ___ un cheval.",
+      "choices": [
+        "on",
+        "ont"
+      ],
+      "answer": "ont",
+      "valide": false
+    },
+    {
+      "id": "e-01",
+      "family": "et_est_es",
+      "text": "Tom ___ Léa jouent ensemble.",
+      "choices": [
+        "et",
+        "est"
+      ],
+      "answer": "et",
+      "valide": false
+    },
+    {
+      "id": "e-02",
+      "family": "et_est_es",
+      "text": "Mon père ___ cuisinier.",
+      "choices": [
+        "et",
+        "est"
+      ],
+      "answer": "est",
+      "valide": false
+    },
+    {
+      "id": "e-03",
+      "family": "et_est_es",
+      "text": "Tu ___ en retard.",
+      "choices": [
+        "es",
+        "est"
+      ],
+      "answer": "es",
+      "valide": false
+    },
+    {
+      "id": "e-04",
+      "family": "et_est_es",
+      "text": "Je mange du pain ___ du fromage.",
+      "choices": [
+        "et",
+        "est"
+      ],
+      "answer": "et",
+      "valide": false
+    },
+    {
+      "id": "e-05",
+      "family": "et_est_es",
+      "text": "Le chat ___ sur le lit.",
+      "choices": [
+        "et",
+        "est"
+      ],
+      "answer": "est",
+      "valide": false
+    },
+    {
+      "id": "e-06",
+      "family": "et_est_es",
+      "text": "Tu ___ très gentil.",
+      "choices": [
+        "es",
+        "est"
+      ],
+      "answer": "es",
+      "valide": false
+    },
+    {
+      "id": "e-07",
+      "family": "et_est_es",
+      "text": "Elle chante ___ elle danse.",
+      "choices": [
+        "et",
+        "est"
+      ],
+      "answer": "et",
+      "valide": false
+    },
+    {
+      "id": "e-08",
+      "family": "et_est_es",
+      "text": "Il ___ en retard.",
+      "choices": [
+        "es",
+        "est"
+      ],
+      "answer": "est",
+      "valide": false
+    },
+    {
+      "id": "e-09",
+      "family": "et_est_es",
+      "text": "Tu ___ mon ami.",
+      "choices": [
+        "es",
+        "est"
+      ],
+      "answer": "es",
+      "valide": false
+    },
+    {
+      "id": "e-10",
+      "family": "et_est_es",
+      "text": "Il est grand ___ fort.",
+      "choices": [
+        "et",
+        "est"
+      ],
+      "answer": "et",
+      "valide": false
+    },
+    {
+      "id": "e-11",
+      "family": "et_est_es",
+      "text": "La soupe ___ chaude.",
+      "choices": [
+        "es",
+        "est"
+      ],
+      "answer": "est",
+      "valide": false
+    },
+    {
+      "id": "e-12",
+      "family": "et_est_es",
+      "text": "Tu ___ monté sur la chaise.",
+      "choices": [
+        "es",
+        "est"
+      ],
+      "answer": "es",
+      "valide": false
+    },
+    {
+      "id": "e-13",
+      "family": "et_est_es",
+      "text": "Nous mangeons ___ nous buvons.",
+      "choices": [
+        "et",
+        "est"
+      ],
+      "answer": "et",
+      "valide": false
+    },
+    {
+      "id": "e-14",
+      "family": "et_est_es",
+      "text": "Ce livre ___ intéressant.",
+      "choices": [
+        "es",
+        "est"
+      ],
+      "answer": "est",
+      "valide": false
+    },
+    {
+      "id": "e-15",
+      "family": "et_est_es",
+      "text": "Tu ___ fatigué ?",
+      "choices": [
+        "es",
+        "est"
+      ],
+      "answer": "es",
+      "valide": false
+    },
+    {
+      "id": "e-16",
+      "family": "et_est_es",
+      "text": "Le ciel est bleu ___ le soleil brille.",
+      "choices": [
+        "et",
+        "est"
+      ],
+      "answer": "et",
+      "valide": false
+    },
+    {
+      "id": "e-17",
+      "family": "et_est_es",
+      "text": "Léa ___ à l'école.",
+      "choices": [
+        "es",
+        "est"
+      ],
+      "answer": "est",
+      "valide": false
+    },
+    {
+      "id": "e-18",
+      "family": "et_est_es",
+      "text": "Tu ___ au parc.",
+      "choices": [
+        "es",
+        "est"
+      ],
+      "answer": "es",
+      "valide": false
+    },
+    {
+      "id": "e-19",
+      "family": "et_est_es",
+      "text": "J'ai un chat ___ un chien.",
+      "choices": [
+        "et",
+        "est"
+      ],
+      "answer": "et",
+      "valide": false
+    },
+    {
+      "id": "e-20",
+      "family": "et_est_es",
+      "text": "Il ___ parti hier.",
+      "choices": [
+        "et",
+        "est"
+      ],
+      "answer": "est",
+      "valide": false
+    },
+    {
+      "id": "s-01",
+      "family": "son_sont",
+      "text": "Il range ___ sac.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "son",
+      "valide": false
+    },
+    {
+      "id": "s-02",
+      "family": "son_sont",
+      "text": "Les enfants ___ à l'école.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "sont",
+      "valide": false
+    },
+    {
+      "id": "s-03",
+      "family": "son_sont",
+      "text": "Léa prend ___ vélo.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "son",
+      "valide": false
+    },
+    {
+      "id": "s-04",
+      "family": "son_sont",
+      "text": "Mes amis ___ gentils.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "sont",
+      "valide": false
+    },
+    {
+      "id": "s-05",
+      "family": "son_sont",
+      "text": "Mon frère aime ___ chat.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "son",
+      "valide": false
+    },
+    {
+      "id": "s-06",
+      "family": "son_sont",
+      "text": "Elles ___ parties hier.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "sont",
+      "valide": false
+    },
+    {
+      "id": "s-07",
+      "family": "son_sont",
+      "text": "Elle lit ___ livre.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "son",
+      "valide": false
+    },
+    {
+      "id": "s-08",
+      "family": "son_sont",
+      "text": "Ils ___ très fatigués.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "sont",
+      "valide": false
+    },
+    {
+      "id": "s-09",
+      "family": "son_sont",
+      "text": "Il met ___ manteau.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "son",
+      "valide": false
+    },
+    {
+      "id": "s-10",
+      "family": "son_sont",
+      "text": "Les fleurs ___ belles.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "sont",
+      "valide": false
+    },
+    {
+      "id": "s-11",
+      "family": "son_sont",
+      "text": "Le garçon cherche ___ chien.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "son",
+      "valide": false
+    },
+    {
+      "id": "s-12",
+      "family": "son_sont",
+      "text": "Nous savons qu'ils ___ là.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "sont",
+      "valide": false
+    },
+    {
+      "id": "s-13",
+      "family": "son_sont",
+      "text": "Paul ouvre ___ cahier.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "son",
+      "valide": false
+    },
+    {
+      "id": "s-14",
+      "family": "son_sont",
+      "text": "Les chats ___ sur le toit.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "sont",
+      "valide": false
+    },
+    {
+      "id": "s-15",
+      "family": "son_sont",
+      "text": "Elle écoute ___ père.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "son",
+      "valide": false
+    },
+    {
+      "id": "s-16",
+      "family": "son_sont",
+      "text": "Mes parents ___ en vacances.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "sont",
+      "valide": false
+    },
+    {
+      "id": "s-17",
+      "family": "son_sont",
+      "text": "Le chat boit ___ lait.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "son",
+      "valide": false
+    },
+    {
+      "id": "s-18",
+      "family": "son_sont",
+      "text": "Les livres ___ sur la table.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "sont",
+      "valide": false
+    },
+    {
+      "id": "s-19",
+      "family": "son_sont",
+      "text": "Il perd ___ crayon.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "son",
+      "valide": false
+    },
+    {
+      "id": "s-20",
+      "family": "son_sont",
+      "text": "Ces enfants ___ contents.",
+      "choices": [
+        "son",
+        "sont"
+      ],
+      "answer": "sont",
+      "valide": false
+    },
+    {
+      "id": "o-01",
+      "family": "ou_ou",
+      "text": "Tu veux du thé ___ du café ?",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "ou",
+      "valide": false
+    },
+    {
+      "id": "o-02",
+      "family": "ou_ou",
+      "text": "Dis-moi ___ tu habites.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "où",
+      "valide": false
+    },
+    {
+      "id": "o-03",
+      "family": "ou_ou",
+      "text": "Il joue au foot ___ au tennis.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "ou",
+      "valide": false
+    },
+    {
+      "id": "o-04",
+      "family": "ou_ou",
+      "text": "Voici la maison ___ je suis né.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "où",
+      "valide": false
+    },
+    {
+      "id": "o-05",
+      "family": "ou_ou",
+      "text": "On part le matin ___ le soir ?",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "ou",
+      "valide": false
+    },
+    {
+      "id": "o-06",
+      "family": "ou_ou",
+      "text": "Je ne sais pas ___ il est.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "où",
+      "valide": false
+    },
+    {
+      "id": "o-07",
+      "family": "ou_ou",
+      "text": "Je mange une pomme ___ une poire.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "ou",
+      "valide": false
+    },
+    {
+      "id": "o-08",
+      "family": "ou_ou",
+      "text": "La ville ___ elle travaille est grande.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "où",
+      "valide": false
+    },
+    {
+      "id": "o-09",
+      "family": "ou_ou",
+      "text": "Elle lit un livre ___ un journal.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "ou",
+      "valide": false
+    },
+    {
+      "id": "o-10",
+      "family": "ou_ou",
+      "text": "Tu sais ___ est mon sac ?",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "où",
+      "valide": false
+    },
+    {
+      "id": "o-11",
+      "family": "ou_ou",
+      "text": "Prends le bus ___ le train.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "ou",
+      "valide": false
+    },
+    {
+      "id": "o-12",
+      "family": "ou_ou",
+      "text": "Le jour ___ elle arrive, nous dînons ensemble.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "où",
+      "valide": false
+    },
+    {
+      "id": "o-13",
+      "family": "ou_ou",
+      "text": "Tu préfères le rouge ___ le bleu ?",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "ou",
+      "valide": false
+    },
+    {
+      "id": "o-14",
+      "family": "ou_ou",
+      "text": "C'est l'école ___ Léa a appris à lire.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "où",
+      "valide": false
+    },
+    {
+      "id": "o-15",
+      "family": "ou_ou",
+      "text": "Il regarde un film ___ il lit un livre.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "ou",
+      "valide": false
+    },
+    {
+      "id": "o-16",
+      "family": "ou_ou",
+      "text": "Savez-vous ___ vous allez ?",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "où",
+      "valide": false
+    },
+    {
+      "id": "o-17",
+      "family": "ou_ou",
+      "text": "Veux-tu rester ___ partir ?",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "ou",
+      "valide": false
+    },
+    {
+      "id": "o-18",
+      "family": "ou_ou",
+      "text": "Je cherche l'endroit ___ j'ai posé mes clés.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "où",
+      "valide": false
+    },
+    {
+      "id": "o-19",
+      "family": "ou_ou",
+      "text": "Nous irons à la mer ___ à la montagne.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "ou",
+      "valide": false
+    },
+    {
+      "id": "o-20",
+      "family": "ou_ou",
+      "text": "Il demande ___ tu as mis le livre.",
+      "choices": [
+        "ou",
+        "où"
+      ],
+      "answer": "où",
+      "valide": false
+    },
+    {
+      "id": "r-01",
+      "family": "er_e",
+      "text": "Elle aime ___ le soir.",
+      "choices": [
+        "chanter",
+        "chanté"
+      ],
+      "answer": "chanter",
+      "valide": false
+    },
+    {
+      "id": "r-02",
+      "family": "er_e",
+      "text": "Il veut ___ un gâteau.",
+      "choices": [
+        "manger",
+        "mangé"
+      ],
+      "answer": "manger",
+      "valide": false
+    },
+    {
+      "id": "r-03",
+      "family": "er_e",
+      "text": "Elle veut ___ ses amis.",
+      "choices": [
+        "inviter",
+        "invité"
+      ],
+      "answer": "inviter",
+      "valide": false
+    },
+    {
+      "id": "r-04",
+      "family": "er_e",
+      "text": "Nous avons ___ longtemps.",
+      "choices": [
+        "marcher",
+        "marché"
+      ],
+      "answer": "marché",
+      "valide": false
+    },
+    {
+      "id": "r-05",
+      "family": "er_e",
+      "text": "Elle a failli ___.",
+      "choices": [
+        "tomber",
+        "tombé"
+      ],
+      "answer": "tomber",
+      "valide": false
+    },
+    {
+      "id": "r-06",
+      "family": "er_e",
+      "text": "Papa a ___ la nappe.",
+      "choices": [
+        "plier",
+        "plié"
+      ],
+      "answer": "plié",
+      "valide": false
+    },
+    {
+      "id": "r-07",
+      "family": "er_e",
+      "text": "Il a ___ des feuilles.",
+      "choices": [
+        "ramasser",
+        "ramassé"
+      ],
+      "answer": "ramassé",
+      "valide": false
+    },
+    {
+      "id": "r-08",
+      "family": "er_e",
+      "text": "Elle a ___ son exposé.",
+      "choices": [
+        "présenter",
+        "présenté"
+      ],
+      "answer": "présenté",
+      "valide": false
+    },
+    {
+      "id": "r-09",
+      "family": "er_e",
+      "text": "Je vais ___ du pain.",
+      "choices": [
+        "acheter",
+        "acheté"
+      ],
+      "answer": "acheter",
+      "valide": false
+    },
+    {
+      "id": "r-10",
+      "family": "er_e",
+      "text": "Il a ___ la leçon.",
+      "choices": [
+        "copier",
+        "copié"
+      ],
+      "answer": "copié",
+      "valide": false
+    },
+    {
+      "id": "r-11",
+      "family": "er_e",
+      "text": "Il a vite ___ son dessin.",
+      "choices": [
+        "montrer",
+        "montré"
+      ],
+      "answer": "montré",
+      "valide": false
+    },
+    {
+      "id": "r-12",
+      "family": "er_e",
+      "text": "Il a ___ un chat.",
+      "choices": [
+        "dessiner",
+        "dessiné"
+      ],
+      "answer": "dessiné",
+      "valide": false
+    },
+    {
+      "id": "r-13",
+      "family": "er_e",
+      "text": "Il a trop ___.",
+      "choices": [
+        "bavarder",
+        "bavardé"
+      ],
+      "answer": "bavardé",
+      "valide": false
+    },
+    {
+      "id": "r-14",
+      "family": "er_e",
+      "text": "Il espère ___ le match.",
+      "choices": [
+        "gagner",
+        "gagné"
+      ],
+      "answer": "gagner",
+      "valide": false
+    },
+    {
+      "id": "r-15",
+      "family": "er_e",
+      "text": "Il travaille sans ___.",
+      "choices": [
+        "arrêter",
+        "arrêté"
+      ],
+      "answer": "arrêter",
+      "valide": false
+    },
+    {
+      "id": "r-16",
+      "family": "er_e",
+      "text": "Papa est ___ ce soir.",
+      "choices": [
+        "fatiguer",
+        "fatigué"
+      ],
+      "answer": "fatigué",
+      "valide": false
+    },
+    {
+      "id": "r-17",
+      "family": "er_e",
+      "text": "Tu as ___ ma soupe ?",
+      "choices": [
+        "goûter",
+        "goûté"
+      ],
+      "answer": "goûté",
+      "valide": false
+    },
+    {
+      "id": "r-18",
+      "family": "er_e",
+      "text": "Il aime ___ les timbres.",
+      "choices": [
+        "collectionner",
+        "collectionné"
+      ],
+      "answer": "collectionner",
+      "valide": false
+    },
+    {
+      "id": "r-19",
+      "family": "er_e",
+      "text": "Il refuse de ___ son manteau.",
+      "choices": [
+        "porter",
+        "porté"
+      ],
+      "answer": "porter",
+      "valide": false
+    },
+    {
+      "id": "r-20",
+      "family": "er_e",
+      "text": "J'ai ___ mes chaussures.",
+      "choices": [
+        "enlever",
+        "enlevé"
+      ],
+      "answer": "enlevé",
+      "valide": false
+    },
+    {
+      "id": "r-21",
+      "family": "er_e",
+      "text": "Je ne peux pas ___ ce jour.",
+      "choices": [
+        "oublier",
+        "oublié"
+      ],
+      "answer": "oublier",
+      "valide": false
+    },
+    {
+      "id": "r-22",
+      "family": "er_e",
+      "text": "Nous allons ___ en train.",
+      "choices": [
+        "voyager",
+        "voyagé"
+      ],
+      "answer": "voyager",
+      "valide": false
+    },
+    {
+      "id": "r-23",
+      "family": "er_e",
+      "text": "Elle rêve de ___ sur scène.",
+      "choices": [
+        "danser",
+        "dansé"
+      ],
+      "answer": "danser",
+      "valide": false
+    },
+    {
+      "id": "r-24",
+      "family": "er_e",
+      "text": "Nous devons ___ un crayon.",
+      "choices": [
+        "utiliser",
+        "utilisé"
+      ],
+      "answer": "utiliser",
+      "valide": false
+    },
+    {
+      "id": "r-25",
+      "family": "er_e",
+      "text": "Il a peur de ___.",
+      "choices": [
+        "sauter",
+        "sauté"
+      ],
+      "answer": "sauter",
+      "valide": false
+    },
+    {
+      "id": "r-26",
+      "family": "er_e",
+      "text": "Je dois ___ mes devoirs.",
+      "choices": [
+        "terminer",
+        "terminé"
+      ],
+      "answer": "terminer",
+      "valide": false
+    },
+    {
+      "id": "r-27",
+      "family": "er_e",
+      "text": "Il a ___ la même chose.",
+      "choices": [
+        "penser",
+        "pensé"
+      ],
+      "answer": "pensé",
+      "valide": false
+    },
+    {
+      "id": "r-28",
+      "family": "er_e",
+      "text": "Mon frère est ___ en retard.",
+      "choices": [
+        "arriver",
+        "arrivé"
+      ],
+      "answer": "arrivé",
+      "valide": false
+    },
+    {
+      "id": "r-29",
+      "family": "er_e",
+      "text": "Tu as ___ tes dents ?",
+      "choices": [
+        "brosser",
+        "brossé"
+      ],
+      "answer": "brossé",
+      "valide": false
+    },
+    {
+      "id": "r-30",
+      "family": "er_e",
+      "text": "Le chauffeur a ___ le volant.",
+      "choices": [
+        "tourner",
+        "tourné"
+      ],
+      "answer": "tourné",
+      "valide": false
+    },
+    {
+      "id": "r-31",
+      "family": "er_e",
+      "text": "Maman a ___ un bon repas.",
+      "choices": [
+        "préparer",
+        "préparé"
+      ],
+      "answer": "préparé",
+      "valide": false
+    },
+    {
+      "id": "r-32",
+      "family": "er_e",
+      "text": "Hier, il a ___ des crêpes.",
+      "choices": [
+        "cuisiner",
+        "cuisiné"
+      ],
+      "answer": "cuisiné",
+      "valide": false
+    },
+    {
+      "id": "r-33",
+      "family": "er_e",
+      "text": "Tu dois ___ le professeur.",
+      "choices": [
+        "écouter",
+        "écouté"
+      ],
+      "answer": "écouter",
+      "valide": false
+    },
+    {
+      "id": "r-34",
+      "family": "er_e",
+      "text": "Il faut ___ les assiettes.",
+      "choices": [
+        "laver",
+        "lavé"
+      ],
+      "answer": "laver",
+      "valide": false
+    },
+    {
+      "id": "r-35",
+      "family": "er_e",
+      "text": "Peux-tu ___ Paul ?",
+      "choices": [
+        "aider",
+        "aidé"
+      ],
+      "answer": "aider",
+      "valide": false
+    },
+    {
+      "id": "r-36",
+      "family": "er_e",
+      "text": "Papa a ___ toute la nuit.",
+      "choices": [
+        "travailler",
+        "travaillé"
+      ],
+      "answer": "travaillé",
+      "valide": false
+    },
+    {
+      "id": "r-37",
+      "family": "er_e",
+      "text": "Tu dois ___ ta chemise.",
+      "choices": [
+        "changer",
+        "changé"
+      ],
+      "answer": "changer",
+      "valide": false
+    },
+    {
+      "id": "r-38",
+      "family": "er_e",
+      "text": "Je vais ___ mon cartable.",
+      "choices": [
+        "trouver",
+        "trouvé"
+      ],
+      "answer": "trouver",
+      "valide": false
+    },
+    {
+      "id": "r-39",
+      "family": "er_e",
+      "text": "Nous venons de ___ la chambre.",
+      "choices": [
+        "ranger",
+        "rangé"
+      ],
+      "answer": "ranger",
+      "valide": false
+    },
+    {
+      "id": "r-40",
+      "family": "er_e",
+      "text": "Il est ___ ici.",
+      "choices": [
+        "rester",
+        "resté"
+      ],
+      "answer": "resté",
+      "valide": false
+    },
+    {
+      "id": "r-41",
+      "family": "er_e",
+      "text": "Elle a ___ un cadeau à Paul.",
+      "choices": [
+        "donner",
+        "donné"
+      ],
+      "answer": "donné",
+      "valide": false
+    },
+    {
+      "id": "r-42",
+      "family": "er_e",
+      "text": "Elle a ___ le ballon.",
+      "choices": [
+        "lancer",
+        "lancé"
+      ],
+      "answer": "lancé",
+      "valide": false
+    },
+    {
+      "id": "r-43",
+      "family": "er_e",
+      "text": "Le camion a ___ vite.",
+      "choices": [
+        "rouler",
+        "roulé"
+      ],
+      "answer": "roulé",
+      "valide": false
+    },
+    {
+      "id": "r-44",
+      "family": "er_e",
+      "text": "Avant de ___, il attend.",
+      "choices": [
+        "monter",
+        "monté"
+      ],
+      "answer": "monter",
+      "valide": false
+    },
+    {
+      "id": "r-45",
+      "family": "er_e",
+      "text": "Papa m'a ___ ce matin.",
+      "choices": [
+        "accompagner",
+        "accompagné"
+      ],
+      "answer": "accompagné",
+      "valide": false
+    },
+    {
+      "id": "r-46",
+      "family": "er_e",
+      "text": "Maman prend un couteau pour ___.",
+      "choices": [
+        "couper",
+        "coupé"
+      ],
+      "answer": "couper",
+      "valide": false
+    },
+    {
+      "id": "r-47",
+      "family": "er_e",
+      "text": "J'ai longtemps ___ mes clés.",
+      "choices": [
+        "chercher",
+        "cherché"
+      ],
+      "answer": "cherché",
+      "valide": false
+    },
+    {
+      "id": "r-48",
+      "family": "er_e",
+      "text": "Papa va ___ le vélo.",
+      "choices": [
+        "réparer",
+        "réparé"
+      ],
+      "answer": "réparer",
+      "valide": false
+    },
+    {
+      "id": "r-49",
+      "family": "er_e",
+      "text": "J'ai ___ ta veste.",
+      "choices": [
+        "essayer",
+        "essayé"
+      ],
+      "answer": "essayé",
+      "valide": false
+    },
+    {
+      "id": "r-50",
+      "family": "er_e",
+      "text": "Nous avons ___ le musée.",
+      "choices": [
+        "visiter",
+        "visité"
+      ],
+      "answer": "visité",
+      "valide": false
+    },
+    {
+      "id": "r-51",
+      "family": "er_e",
+      "text": "Léa n'ose pas ___.",
+      "choices": [
+        "parler",
+        "parlé"
+      ],
+      "answer": "parler",
+      "valide": false
+    },
+    {
+      "id": "r-52",
+      "family": "er_e",
+      "text": "Elle sort pour ___ le chien.",
+      "choices": [
+        "promener",
+        "promené"
+      ],
+      "answer": "promener",
+      "valide": false
+    },
+    {
+      "id": "r-53",
+      "family": "er_e",
+      "text": "Nous allons ___ au parc.",
+      "choices": [
+        "jouer",
+        "joué"
+      ],
+      "answer": "jouer",
+      "valide": false
+    },
+    {
+      "id": "r-54",
+      "family": "er_e",
+      "text": "Elle a ___ son cartable.",
+      "choices": [
+        "vérifier",
+        "vérifié"
+      ],
+      "answer": "vérifié",
+      "valide": false
+    },
+    {
+      "id": "r-55",
+      "family": "er_e",
+      "text": "Il apprend à ___.",
+      "choices": [
+        "nager",
+        "nagé"
+      ],
+      "answer": "nager",
+      "valide": false
+    },
+    {
+      "id": "r-56",
+      "family": "er_e",
+      "text": "Il a ___ sa chambre.",
+      "choices": [
+        "nettoyer",
+        "nettoyé"
+      ],
+      "answer": "nettoyé",
+      "valide": false
+    },
+    {
+      "id": "r-57",
+      "family": "er_e",
+      "text": "Il a ___ ses chaussettes.",
+      "choices": [
+        "cacher",
+        "caché"
+      ],
+      "answer": "caché",
+      "valide": false
+    },
+    {
+      "id": "r-58",
+      "family": "er_e",
+      "text": "Ils adorent ___ des photos.",
+      "choices": [
+        "regarder",
+        "regardé"
+      ],
+      "answer": "regarder",
+      "valide": false
+    },
+    {
+      "id": "r-59",
+      "family": "er_e",
+      "text": "Le chat a ___ une souris.",
+      "choices": [
+        "attraper",
+        "attrapé"
+      ],
+      "answer": "attrapé",
+      "valide": false
+    },
+    {
+      "id": "r-60",
+      "family": "er_e",
+      "text": "Tu peux ___ la fenêtre ?",
+      "choices": [
+        "fermer",
+        "fermé"
+      ],
+      "answer": "fermer",
+      "valide": false
+    }
+  ]
+}
