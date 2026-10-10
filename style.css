@@ -72,7 +72,9 @@ a { color: inherit; }
 .discret { color: var(--encre-douce); font-size: .88rem; }
 
 .logo { font-family: var(--titre); font-style: var(--titre-style); font-weight: var(--titre-poids); font-size: 1.15rem; letter-spacing: .01em; }
-.logo::after { content: ""; display: block; height: 4px; margin-top: 3px; border-radius: 2px; background: var(--tampon); }
+.logo { display: inline-flex; align-items: center; gap: 10px; }
+.logo img { display: block; border-radius: 10px; }
+.logo-nom::after { content: ""; display: block; height: 4px; margin-top: 3px; border-radius: 2px; background: var(--tampon); }
 .haut { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; }
 .pastille {
   display: inline-flex; align-items: center; gap: 10px; text-decoration: none; background: var(--papier);

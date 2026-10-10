@@ -1,7 +1,7 @@
 // Service worker : généré par `node tools/build-sw.js` (ne pas modifier sw.js à la main).
 // Le nom du cache change dès qu'un fichier de l'appli change : c'est ce qui déclenche
 // la bannière « Nouvelle version disponible ».
-const CACHE_NAME = 'ortho-no-kata-f0a50d19';
+const CACHE_NAME = 'ortho-no-kata-143a045c';
 const ASSETS = [
   "./",
   "data/phrases-v1.json",
@@ -11,6 +11,8 @@ const ASSETS = [
   "duel.js",
   "icons/icon-192.png",
   "icons/icon-512.png",
+  "icons/icon-plein.svg",
+  "icons/logo.svg",
   "index.html",
   "lecon.html",
   "lecon.js",

@@ -95,7 +95,7 @@ class LeconApp {
       if (option.value === carte.answer) {
         reponses.querySelectorAll('button').forEach(b => { b.disabled = true; });
         bouton.classList.add('juste');
-        verdict.replaceChildren(el('div', { class: 'verdict juste' }, el('b', {}, 'Bravo, tu as fait le test !'),
+        verdict.replaceChildren(el('div', { class: 'verdict juste' }, el('b', {}, 'Bravo ! Tu as compris 👍'),
           el('p', {}, carte.conclusion), el('p', { class: 'phrase-ex' }, carte.complete)));
         jouer.hidden = false; jouer.focus({ preventScroll: true });
       } else {

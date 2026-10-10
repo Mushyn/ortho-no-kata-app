@@ -31,7 +31,7 @@ class MenuApp {
 
     this.racine.replaceChildren(
       el('div', { class: 'haut' },
-        el('span', { class: 'logo' }, 'Ortho no Kata'),
+        el('span', { class: 'logo' }, el('img', { src: 'icons/logo.svg', alt: '', width: 36, height: 36 }), el('span', { class: 'logo-nom' }, 'Ortho no Kata')),
         el('a', { class: 'pastille', href: 'scores.html', 'aria-label': 'Mes scores : niveau ' + niveau.niveau + ', ' + points + ' points' },
           el('span', { class: 'niveau-puce' }, 'Niv. ' + niveau.niveau),
           serie > 0 ? el('span', {}, '🔥 ' + serie) : null)),
