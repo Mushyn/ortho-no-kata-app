@@ -1,7 +1,7 @@
 // Service worker : généré par `node tools/build-sw.js` (ne pas modifier sw.js à la main).
 // Le nom du cache change dès qu'un fichier de l'appli change : c'est ce qui déclenche
 // la bannière « Nouvelle version disponible ».
-const CACHE_NAME = 'ortho-no-kata-bbf24001';
+const CACHE_NAME = 'ortho-no-kata-f0a50d19';
 const ASSETS = [
   "./",
   "data/phrases-v1.json",
@@ -21,7 +21,8 @@ const ASSETS = [
   "scores.html",
   "scores.js",
   "shared.js",
-  "style.css"
+  "style.css",
+  "theme.js"
 ];
 
 self.addEventListener('install', event => {

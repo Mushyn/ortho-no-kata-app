@@ -9,7 +9,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const PREFIXE = 'ortho:';
-const REGLAGES_PAR_DEFAUT = { nombre: 5, voix: true, prenom: '' };
+const REGLAGES_PAR_DEFAUT = { nombre: 5, voix: true, prenom: '', theme: 'arcade' };
 
 function createStore(storage) {
   const memoire = new Map();   // repli quand le stockage est indisponible

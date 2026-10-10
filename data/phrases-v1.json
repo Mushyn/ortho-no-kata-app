@@ -16,7 +16,18 @@
         "S7"
       ],
       "theme": "a / à",
-      "ordre": 4
+      "ordre": 4,
+      "lecon": {
+        "situer": [
+          "« a » et « à » se prononcent pareil.",
+          "« a », c'est le verbe avoir : il a, elle a. « à », c'est un petit mot qui relie : à la maison, à Paul."
+        ],
+        "observer": [
+          "On remplace par « avait » : c'est le même verbe, mais hier.",
+          "Si la phrase reste correcte, c'est le verbe avoir : j'écris « a ». Si elle devient bizarre, j'écris « à »."
+        ],
+        "reflechir": "Voici deux phrases. On essaie « avait » dans chacune."
+      }
     },
     "on_ont": {
       "label": "on / ont",
@@ -31,7 +42,18 @@
         "S7"
       ],
       "theme": "on / ont",
-      "ordre": 5
+      "ordre": 5,
+      "lecon": {
+        "situer": [
+          "« on » et « ont » se prononcent pareil.",
+          "« on » veut dire quelqu'un, comme il ou elle. « ont », c'est le verbe avoir pour plusieurs personnes : ils ont, elles ont."
+        ],
+        "observer": [
+          "On remplace par « avaient » : c'est le verbe avoir, au passé.",
+          "Si la phrase reste correcte, j'écris « ont ». Si elle devient bizarre, j'écris « on »."
+        ],
+        "reflechir": "Voici deux phrases. On essaie « avaient » dans chacune."
+      }
     },
     "et_est_es": {
       "label": "et / est / es",
@@ -48,7 +70,18 @@
           "confirms": [
             "est"
           ],
-          "otherwise": "et"
+          "otherwise": "et",
+          "lecon": {
+            "situer": [
+              "« et » et « est » se prononcent pareil.",
+              "« et » relie deux choses : du pain et du beurre. « est », c'est le verbe être : il est, elle est."
+            ],
+            "observer": [
+              "On remplace par « était » : c'est le verbe être, au passé.",
+              "Si la phrase reste correcte, j'écris « est ». Si elle devient bizarre, j'écris « et »."
+            ],
+            "reflechir": "Voici deux phrases. On essaie « était » dans chacune."
+          }
         },
         "es|est": {
           "theme": "es / est",
@@ -58,7 +91,18 @@
             "es"
           ],
           "otherwise": "est",
-          "rule": "TU ES : es ne s'écrit qu'avec tu"
+          "rule": "TU ES : es ne s'écrit qu'avec tu",
+          "lecon": {
+            "situer": [
+              "« es » et « est » se prononcent pareil. Les deux sont le verbe être.",
+              "« es » ne va qu'avec TU : tu es. « est » va avec il, elle, on : il est."
+            ],
+            "observer": [
+              "On remplace par « étais » : tu étais, ça marche. Il étais, ça ne marche pas.",
+              "Si la phrase reste correcte avec « étais », j'écris « es ». Sinon, j'écris « est »."
+            ],
+            "reflechir": "Voici deux phrases. On essaie « étais » dans chacune."
+          }
         }
       },
       "ordre": 2,
@@ -77,7 +121,18 @@
         "S33"
       ],
       "theme": "son / sont",
-      "ordre": 6
+      "ordre": 6,
+      "lecon": {
+        "situer": [
+          "« son » et « sont » se prononcent pareil.",
+          "« son », c'est à lui ou à elle : son sac, son vélo. « sont », c'est le verbe être pour plusieurs personnes : ils sont, elles sont."
+        ],
+        "observer": [
+          "On remplace par « mon » : son sac devient mon sac.",
+          "Si la phrase reste correcte, j'écris « son ». Si elle devient bizarre, j'écris « sont »."
+        ],
+        "reflechir": "Voici deux phrases. On essaie « mon » dans chacune."
+      }
     },
     "ou_ou": {
       "label": "ou / où",
@@ -93,7 +148,18 @@
       ],
       "theme": "ou / où",
       "ordre": 3,
-      "majeure": true
+      "majeure": true,
+      "lecon": {
+        "situer": [
+          "« ou » et « où » se prononcent pareil.",
+          "« ou » sert à choisir : thé ou café. « où » parle d'un lieu ou d'un moment : où es-tu ?"
+        ],
+        "observer": [
+          "On remplace par « ou bien » : thé ou bien café.",
+          "Si la phrase reste correcte, j'écris « ou ». Si elle devient bizarre, j'écris « où » avec l'accent."
+        ],
+        "reflechir": "Voici deux phrases. On essaie « ou bien » dans chacune."
+      }
     },
     "er_e": {
       "label": "-er / -é",
@@ -111,7 +177,20 @@
       "theme": "-er / -é",
       "attendu": 60,
       "ordre": 1,
-      "majeure": true
+      "majeure": true,
+      "lecon": {
+        "situer": [
+          "Il y a deux façons de finir un verbe : -er ou -é.",
+          "-er, c'est le verbe tout simple, « à l'infinitif » : manger, chanter. -é, c'est le verbe qui raconte une action finie, « au participe passé » : mangé, chanté.",
+          "Problème : manger et mangé se prononcent pareil. L'oreille ne peut pas nous aider, il nous faut un truc."
+        ],
+        "observer": [
+          "On prend un verbe dont les deux formes ne sonnent PAS pareil : mordre et mordu.",
+          "mordre se termine par -re : c'est la famille du -er. mordu se termine par -u : c'est la famille du -é.",
+          "On change seulement le verbe de la phrase. Tout le reste ne bouge pas. Et on écoute laquelle des deux phrases est correcte."
+        ],
+        "reflechir": "Voici deux phrases. Dans chacune, on essaie mordre, puis mordu. Une seule sonne juste."
+      }
     }
   },
   "items": [

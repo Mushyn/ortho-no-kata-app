@@ -34,7 +34,7 @@ function themesDe(cartes) {
     if (!themes.has(carte.themeKey)) {
       themes.set(carte.themeKey, {
         key: carte.themeKey, family: carte.family, theme: carte.theme,
-        question: carte.question, rule: carte.rule, majeure: carte.majeure, ordre: carte.ordre, cartes: []
+        question: carte.question, rule: carte.rule, lecon: carte.lecon, majeure: carte.majeure, ordre: carte.ordre, cartes: []
       });
     }
     themes.get(carte.themeKey).cartes.push(carte);
@@ -129,6 +129,18 @@ function serieDeJours(historique, maintenant = Date.now()) {
   return serie;
 }
 
+// Niveau du joueur : un niveau tous les 100 points (on monte, on ne redescend jamais)
+const POINTS_PAR_NIVEAU = 100;
+function niveauDe(points) {
+  return { niveau: 1 + Math.floor(points / POINTS_PAR_NIVEAU), dans: points % POINTS_PAR_NIVEAU, pour: POINTS_PAR_NIVEAU };
+}
+
+// Combien de séances aujourd'hui (la « mission du jour » est accomplie dès la première)
+function seancesAujourdhui(historique, maintenant = Date.now()) {
+  const jour = jourLocal(maintenant);
+  return historique.filter(s => jourLocal(s.t) === jour).length;
+}
+
 function seancesDuTheme(historique, cle) {
   return historique.filter(s => s.theme === cle).length;
 }
@@ -159,6 +171,12 @@ function plusCourte(cartes) {
   return cartes.slice().sort((a, b) => a.text.length - b.text.length)[0];
 }
 
+// La carte de l'étape « Agir » : une carte du thème qui n'est pas déjà un exemple
+function carteAgir(theme, exemples) {
+  const vues = new Set(exemples.map(e => e.carte.id));
+  return plusCourte(theme.cartes.filter(c => !vues.has(c.id)).slice(0, 12));
+}
+
 function leconDe(theme) {
   const premiere = theme.cartes[0];
   if (premiere.kind === 'choisir') {
@@ -167,9 +185,9 @@ function leconDe(theme) {
       return { carte, reponse: carte.answer, options: carte.options.map(o => ({ label: o.label, mot: o.mot, juste: o.value === carte.answer })) };
     });
     return {
-      theme: theme.theme, mode: 'choisir', question: theme.question, rule: theme.rule,
+      theme: theme.theme, mode: 'choisir', question: theme.question, rule: theme.rule, etapes: theme.lecon,
       paire: Object.entries(premiere.paire).map(([fin, mot]) => ({ mot, fin: '-' + fin })),
-      exemples
+      exemples, agir: carteAgir(theme, exemples)
     };
   }
   const oui = premiere.options[0].value;
@@ -178,7 +196,7 @@ function leconDe(theme) {
     const carte = plusCourte(theme.cartes.filter(c => c.answer === mot));
     return { carte, reponse: mot, juste: mot === oui, test: carte.temoin, mot: carte.temoinMot };
   });
-  return { theme: theme.theme, mode: 'juger', question: theme.question, rule: theme.rule, mot: premiere.temoinMot, oui, non, exemples };
+  return { theme: theme.theme, mode: 'juger', question: theme.question, rule: theme.rule, etapes: theme.lecon, mot: premiere.temoinMot, oui, non, exemples, agir: carteAgir(theme, exemples) };
 }
 
 class DuelGame {
@@ -254,10 +272,10 @@ class DuelGame {
 if (typeof module !== 'undefined') {
   module.exports = {
     BOITE_MAX, BOITE_ACQUISE, ECART_REPRISE,
-    POINTS_PAR_REPONSE, jourLocal, enregistrerSeance, pointsTotal, serieDeJours, seancesDuTheme, etoilesDe, themeSuggere, leconDe,
+    POINTS_PAR_REPONSE, POINTS_PAR_NIVEAU, niveauDe, seancesAujourdhui, jourLocal, enregistrerSeance, pointsTotal, serieDeJours, seancesDuTheme, etoilesDe, themeSuggere, leconDe,
     toutesLesCartes, themesDe, melanger, boiteDe, choisirSeance, enregistrer, maitrise, DuelGame
   };
 } else {
   window.DuelModel = { toutesLesCartes, themesDe, melanger, boiteDe, choisirSeance, enregistrer, maitrise, DuelGame, BOITE_ACQUISE,
-    POINTS_PAR_REPONSE, jourLocal, enregistrerSeance, pointsTotal, serieDeJours, seancesDuTheme, etoilesDe, themeSuggere, leconDe };
+    POINTS_PAR_REPONSE, POINTS_PAR_NIVEAU, niveauDe, seancesAujourdhui, jourLocal, enregistrerSeance, pointsTotal, serieDeJours, seancesDuTheme, etoilesDe, themeSuggere, leconDe };
 }

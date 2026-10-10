@@ -63,6 +63,7 @@ function carteDe(donnees, item) {
     themeKey: item.family + ':' + regles.theme,
     question: regles.question,
     rule: regles.rule || null,
+    lecon: regles.lecon || null,
     majeure: !!regles.majeure,
     ordre: regles.ordre || 99,
     paire: regles.witnessPair || null,
@@ -78,10 +79,23 @@ function carteDe(donnees, item) {
   base.tests = tests.map(t => ({ phrase: t.phrase, mot: t.mot, juste: t.juste }));
   if (regles.witnessPair) {
     const bon = tests.find(t => t.juste);
+    const mots = Object.values(regles.witnessPair);
+    base.truc = {
+      mots,
+      texte: 'Je dis la phrase avec « ' + mots[0] + ' », puis avec « ' + mots[1] + ' ». Celle qui sonne juste me donne la fin du mot : « ' +
+        Object.entries(regles.witnessPair).map(([fin, mot]) => mot + ' » = -' + fin).join(', « ') + '.'
+    };
     base.conclusion = '« ' + bon.mot + ' » sonne juste : on écrit « ' + item.answer + ' ».';
     const options = tests.map(t => ({ label: t.phrase, mot: t.mot, value: t.valeur }));
     return Object.assign(base, { kind: 'choisir', options });
   }
+  const ouiMot = item.choices.find(c => regles.confirms.includes(c));
+  const nonMot = item.choices.find(c => !regles.confirms.includes(c));
+  base.truc = {
+    mots: [tests[0].mot],
+    texte: 'Je mets « ' + tests[0].mot + ' » à la place du trou et je lis la phrase. Si ça sonne juste, j\'écris « ' + ouiMot +
+      ' ». Si ça ne sonne pas juste, j\'écris « ' + nonMot + ' ».'
+  };
   base.conclusion = (tests[0].juste ? 'Ça sonne juste' : 'Ça ne sonne pas juste') + ' : on écrit « ' + item.answer + ' ».';
 
   const oui = item.choices.find(c => regles.confirms.includes(c));

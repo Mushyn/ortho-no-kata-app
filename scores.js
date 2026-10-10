@@ -19,6 +19,7 @@ class ScoresApp {
       el('div', { class: 'haut' }, el('a', { class: 'bouton petit', href: './' }, '← Accueil')),
       el('h1', {}, 'Mes scores'),
       el('div', { class: 'chiffres' },
+        this.chiffre(DuelModel.niveauDe(points).niveau, 'niveau'),
         this.chiffre(points, 'points'),
         this.chiffre(serie, serie > 1 ? 'jours de suite' : 'jour de suite'),
         this.chiffre(historique.length, historique.length > 1 ? 'séances' : 'séance')),

@@ -61,3 +61,18 @@ function lienTheme(page, cle) { return page + '?theme=' + encodeURIComponent(cle
 function dateCourte(t) {
   return new Date(t).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
 }
+
+// Met en évidence plusieurs mots dans un texte, dans l'ordre où on les trouve
+function surlignerMots(texte, mots) {
+  const parts = [];
+  let reste = texte;
+  for (const mot of mots) {
+    const i = reste.indexOf('« ' + mot + ' »');
+    if (i < 0) continue;
+    const debut = i + 2;
+    parts.push(reste.slice(0, debut), el('b', { class: 'surligne' }, mot));
+    reste = reste.slice(debut + mot.length);
+  }
+  parts.push(reste);
+  return parts;
+}

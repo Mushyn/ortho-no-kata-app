@@ -110,10 +110,12 @@ class DuelApp {
       ? el('div', { class: 'verdict juste' }, el('h2', {}, 'Bravo !'),
           el('div', { class: 'conclusion' }, carte.conclusion))
       : el('div', { class: 'verdict rate' }, el('h2', {}, 'Pas tout à fait'),
-          el('p', {}, 'Reprenons le truc :'),
+          el('p', { class: 'truc-titre' }, 'Le truc :'),
+          el('p', { class: 'truc' }, surlignerMots(carte.truc.texte, carte.truc.mots)),
+          carte.rule ? el('div', { class: 'note' }, carte.rule) : null,
+          el('p', { class: 'truc-titre' }, 'Sur cette phrase :'),
           explication,
           el('div', { class: 'conclusion' }, carte.conclusion),
-          carte.rule ? el('div', { class: 'note' }, carte.rule) : null,
           el('p', { class: 'discret' }, r.premierEssai ? 'Cette phrase reviendra dans un instant.' : 'On la reverra une autre fois.'));
 
     this.zoneRetour.replaceChildren(verdict, el('div', { class: 'actions' }, suivant, voix));
@@ -147,6 +149,8 @@ class DuelApp {
       this.bilanEnregistre = true;
     }
     const gagnes = b.sansAide * DuelModel.POINTS_PAR_REPONSE;
+    const apres = DuelModel.niveauDe(DuelModel.pointsTotal(historique));
+    const avant = DuelModel.niveauDe(DuelModel.pointsTotal(historique) - gagnes);
     const serie = DuelModel.serieDeJours(historique, maintenant);
     const progression = this.store.getProgression();
     const m = DuelModel.maitrise(this.theme ? this.theme.cartes : this.cartes, progression);
@@ -157,6 +161,7 @@ class DuelApp {
       el('div', { class: 'bilan' },
         el('div', { class: 'tampon' }, b.justes + ' / ' + b.total),
         el('div', { class: 'gain' }, b.justes === b.total ? 'Tout du premier coup !' : b.justes + ' du premier coup. Les autres reviendront.'),
+        apres.niveau > avant.niveau ? el('div', { class: 'gain' }, '🎉 Niveau ' + apres.niveau + ' atteint !') : null,
         el('div', { class: 'gain' }, '+ ' + gagnes + ' points', serie > 0 ? '  🔥 ' + serie + (serie > 1 ? ' jours' : ' jour') + ' de suite' : ''),
         this.theme ? el('div', { class: 'gain' }, this.titre + ' ', etoiles(DuelModel.etoilesDe(m, nb))) : null,
         b.aRevoir.length ? el('div', { class: 'a-revoir' }, el('strong', {}, 'À revoir :'),
