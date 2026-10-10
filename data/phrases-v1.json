@@ -15,7 +15,8 @@
         "S1",
         "S7"
       ],
-      "theme": "a ou à"
+      "theme": "a / à",
+      "ordre": 4
     },
     "on_ont": {
       "label": "on / ont",
@@ -29,7 +30,8 @@
         "S1",
         "S7"
       ],
-      "theme": "on ou ont"
+      "theme": "on / ont",
+      "ordre": 5
     },
     "et_est_es": {
       "label": "et / est / es",
@@ -40,7 +42,7 @@
       ],
       "variants": {
         "est|et": {
-          "theme": "et ou est",
+          "theme": "et / est",
           "question": "Je mets « était » à la place : ça sonne juste ?",
           "witness": "était",
           "confirms": [
@@ -49,7 +51,7 @@
           "otherwise": "et"
         },
         "es|est": {
-          "theme": "es ou est",
+          "theme": "es / est",
           "question": "Je mets « étais » à la place : ça sonne juste ?",
           "witness": "étais",
           "confirms": [
@@ -58,7 +60,9 @@
           "otherwise": "est",
           "rule": "TU ES : es ne s'écrit qu'avec tu"
         }
-      }
+      },
+      "ordre": 2,
+      "majeure": true
     },
     "son_sont": {
       "label": "son / sont",
@@ -72,7 +76,8 @@
         "S7",
         "S33"
       ],
-      "theme": "son ou sont"
+      "theme": "son / sont",
+      "ordre": 6
     },
     "ou_ou": {
       "label": "ou / où",
@@ -86,7 +91,9 @@
         "S7",
         "S38"
       ],
-      "theme": "ou ou où"
+      "theme": "ou / où",
+      "ordre": 3,
+      "majeure": true
     },
     "er_e": {
       "label": "-er / -é",
@@ -101,8 +108,10 @@
         "S36",
         "S37"
       ],
-      "theme": "-er ou -é",
-      "attendu": 60
+      "theme": "-er / -é",
+      "attendu": 60,
+      "ordre": 1,
+      "majeure": true
     }
   },
   "items": [

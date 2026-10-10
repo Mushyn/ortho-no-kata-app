@@ -9,7 +9,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const PREFIXE = 'ortho:';
-const REGLAGES_PAR_DEFAUT = { nombre: 5, voix: true };
+const REGLAGES_PAR_DEFAUT = { nombre: 5, voix: true, prenom: '' };
 
 function createStore(storage) {
   const memoire = new Map();   // repli quand le stockage est indisponible
@@ -41,12 +41,19 @@ function createStore(storage) {
     saveProgression: p => set('progression', p),
     getReglages: () => Object.assign({}, REGLAGES_PAR_DEFAUT, get('reglages', {})),
     saveReglages: r => set('reglages', r),
+    // Historique des séances (scores conservés) et leçons déjà vues
+    getHistorique: () => get('historique', []),
+    saveHistorique: h => set('historique', h),
+    getLecons: () => get('lecons', {}),
+    marquerLecon(cle) { const l = get('lecons', {}); l[cle] = true; set('lecons', l); },
     // Export / import de la progression en fichier JSON (sauvegarde, changement de téléphone)
-    exporter: () => JSON.stringify({ app: 'ortho-no-kata', version: 1, progression: get('progression', {}), reglages: get('reglages', {}) }),
+    exporter: () => JSON.stringify({ app: 'ortho-no-kata', version: 1, progression: get('progression', {}), historique: get('historique', []), lecons: get('lecons', {}), reglages: get('reglages', {}) }),
     importer(texte) {
       const o = JSON.parse(texte);
       if (!o || o.app !== 'ortho-no-kata' || typeof o.progression !== 'object') throw new Error('Fichier non reconnu');
       set('progression', o.progression);
+      if (Array.isArray(o.historique)) set('historique', o.historique);
+      if (o.lecons && typeof o.lecons === 'object') set('lecons', o.lecons);
       if (o.reglages) set('reglages', o.reglages);
     }
   };

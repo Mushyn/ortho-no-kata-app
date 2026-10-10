@@ -63,16 +63,26 @@ function carteDe(donnees, item) {
     themeKey: item.family + ':' + regles.theme,
     question: regles.question,
     rule: regles.rule || null,
+    majeure: !!regles.majeure,
+    ordre: regles.ordre || 99,
+    paire: regles.witnessPair || null,
     text: item.text,
     complete: remplir(donnees, item, item.answer),
     choices: item.choices.slice(),
     answer: item.answer
   };
 
+  // Ce qu'on montre APRÈS la réponse (ou en coup de pouce) : l'astuce appliquée à CETTE phrase
+  const tests = testsDeLItem(donnees, item);
+  base.choix = item.choices.slice();       // les deux mots entre lesquels l'enfant choisit
+  base.tests = tests.map(t => ({ phrase: t.phrase, mot: t.mot, juste: t.juste }));
   if (regles.witnessPair) {
-    const options = testsDeLItem(donnees, item).map(t => ({ label: t.phrase, mot: t.mot, value: t.valeur }));
+    const bon = tests.find(t => t.juste);
+    base.conclusion = '« ' + bon.mot + ' » sonne juste : on écrit « ' + item.answer + ' ».';
+    const options = tests.map(t => ({ label: t.phrase, mot: t.mot, value: t.valeur }));
     return Object.assign(base, { kind: 'choisir', options });
   }
+  base.conclusion = (tests[0].juste ? 'Ça sonne juste' : 'Ça ne sonne pas juste') + ' : on écrit « ' + item.answer + ' ».';
 
   const oui = item.choices.find(c => regles.confirms.includes(c));
   const non = item.choices.find(c => !regles.confirms.includes(c));

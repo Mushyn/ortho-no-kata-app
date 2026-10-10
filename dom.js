@@ -28,3 +28,36 @@ async function chargerDonnees() {
   if (!r.ok) throw new Error('Phrases introuvables');
   return r.json();
 }
+
+// Une étoile (SVG). Pleine = acquise, vide = à gagner.
+function etoileSvg(pleine) {
+  const ns = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('aria-hidden', 'true');
+  const path = document.createElementNS(ns, 'path');
+  path.setAttribute('d', 'M12 2.6l2.8 6.3 6.9.6-5.2 4.6 1.6 6.7L12 17.1l-6.1 3.7 1.6-6.7-5.2-4.6 6.9-.6z');
+  path.setAttribute('class', pleine ? 'etoile-pleine' : 'etoile-vide');
+  svg.append(path);
+  return svg;
+}
+
+// Trois étoiles : n pleines
+function etoiles(n, max = 3) {
+  const conteneur = el('span', { class: 'etoiles', role: 'img', 'aria-label': n + ' étoile' + (n > 1 ? 's' : '') + ' sur ' + max });
+  for (let i = 0; i < max; i++) conteneur.append(etoileSvg(i < n));
+  return conteneur;
+}
+
+// Un mot dans une phrase, mis en évidence au surligneur
+function surligne(texte, mot) {
+  return avecMotEnGras(texte, mot, 'surligne');
+}
+
+// Lien d'une page vers une autre avec le thème en paramètre
+function lienTheme(page, cle) { return page + '?theme=' + encodeURIComponent(cle); }
+
+// Date lisible : « 10 oct. »
+function dateCourte(t) {
+  return new Date(t).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+}
