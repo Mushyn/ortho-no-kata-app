@@ -107,11 +107,10 @@ class DuelApp {
       el('span', {}, surligne(t.phrase, t.mot))));
 
     const verdict = r.juste
-      ? el('div', { class: 'verdict juste' }, el('h2', {}, 'Bravo !'),
-          el('div', { class: 'conclusion' }, carte.conclusion))
+      ? el('div', { class: 'verdict juste' }, el('h2', {}, 'Bravo !'))
       : el('div', { class: 'verdict rate' }, el('h2', {}, 'Pas tout à fait'),
           el('p', { class: 'truc-titre' }, 'Le truc :'),
-          el('p', { class: 'truc' }, surlignerMots(carte.truc.texte, carte.truc.mots)),
+          (carte.lecon ? carte.lecon.observer.slice(0, 2) : [carte.truc.texte]).map(p => el('p', { class: 'truc' }, p)),
           carte.rule ? el('div', { class: 'note' }, carte.rule) : null,
           el('p', { class: 'truc-titre' }, 'Sur cette phrase :'),
           explication,

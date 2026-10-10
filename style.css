@@ -60,10 +60,16 @@
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0; color: var(--encre); font: 19px/1.5 var(--corps);
-  min-height: 100vh; min-height: 100dvh;
+  height: 100vh; height: 100dvh; overflow: hidden;
   background-color: var(--fond); background-image: var(--fond-image); background-attachment: fixed;
 }
-main { max-width: 600px; margin: 0 auto; padding: 18px 16px 56px; }
+/* Une page = un écran : fit.js règle --z pour que tout tienne en hauteur */
+main {
+  --z: 1; zoom: var(--z);
+  display: flex; flex-direction: column;
+  max-width: calc(600px / var(--z)); margin: 0 auto; padding: 14px 16px 16px;
+  height: calc(100vh / var(--z)); height: calc(100dvh / var(--z)); overflow-y: auto;
+}
 h1, h2, h3 { font-family: var(--titre); font-style: var(--titre-style); font-weight: var(--titre-poids); line-height: 1.15; margin: 0; }
 h1 { font-size: 2rem; }
 h2 { font-size: 1.25rem; margin: 28px 0 10px; }
@@ -95,7 +101,7 @@ button, .bouton { font: inherit; cursor: pointer; color: var(--encre); -webkit-t
 .bouton.petit { min-height: 44px; padding: 6px 14px; font-size: .9rem; border-width: 2px; }
 .bouton.actif { background: var(--accent); color: var(--accent-texte); border-color: var(--accent); }
 .bouton:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible { outline: 4px solid var(--etoile); outline-offset: 3px; }
-.actions { display: grid; gap: 12px; margin-top: 18px; }
+.actions { display: grid; gap: 12px; margin-top: auto; padding-top: 18px; flex: none; }
 
 /* Accueil : la mission du jour */
 .mission { margin-top: 16px; background: var(--papier); border: var(--epais) solid var(--bord); border-radius: calc(var(--rayon) + 4px); padding: 18px; box-shadow: var(--ombre-carte); }
@@ -249,7 +255,7 @@ label { font-weight: 700; font-size: .9rem; }
 .vide { background: var(--papier); padding: 10px 14px; border-radius: var(--rayon); border: 2px dashed var(--encre-douce); }
 
 /* Bandeau de mise à jour */
-.bandeau { position: sticky; top: 0; z-index: 5; display: none; gap: 12px; align-items: center; justify-content: space-between; background: var(--accent); color: var(--accent-texte); padding: 10px 16px; font-size: .9rem; font-weight: 700; }
+.bandeau { position: fixed; top: 0; left: 0; right: 0; z-index: 5; display: none; gap: 12px; align-items: center; justify-content: space-between; background: var(--accent); color: var(--accent-texte); padding: 10px 16px; font-size: .9rem; font-weight: 700; }
 .bandeau.visible { display: flex; }
 .bandeau button { min-height: 40px; padding: 6px 14px; background: var(--papier); color: var(--encre); border: 0; border-radius: 10px; font-weight: 700; }
 
