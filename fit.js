@@ -17,8 +17,12 @@
     return app.scrollHeight <= app.clientHeight + 1;
   }
 
+  let raison = '';
   function ajuster() {
     attente = false;
+    // Pendant la saisie, le clavier réduit la fenêtre : on garde la taille déjà réglée
+    const actif = document.activeElement;
+    if (raison === 'resize' && actif && actif.tagName === 'INPUT' && actif.type === 'text') return;
     if (tient(1)) return;
     let bas = plancher, haut = 1;
     if (!tient(bas)) return;          // trop long même au plancher : défilement
@@ -29,7 +33,8 @@
     tient(Math.floor(bas * 100) / 100);
   }
 
-  function planifier() {
+  function planifier(e) {
+    raison = e && e.type === 'resize' ? 'resize' : '';
     if (attente) return;
     attente = true;
     requestAnimationFrame(ajuster);
@@ -40,6 +45,7 @@
   window.addEventListener('orientationchange', planifier);
   window.addEventListener('load', planifier);
   document.addEventListener('toggle', planifier, true);
+  document.addEventListener('focusout', planifier, true);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(planifier);
   planifier();
 })();

@@ -3,13 +3,15 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 class ScoresApp {
-  constructor(racine, store, donnees) {
+  constructor(racine, store, donnees, mots) {
     const cartes = DuelModel.toutesLesCartes(donnees);
     const themes = DuelModel.themesDe(cartes);
     const progression = store.getProgression();
     const historique = store.getHistorique();
     const noms = new Map(themes.map(t => [t.key, t.theme]));
     noms.set('tout', 'Mélange');
+    noms.set(MotsModel.CLE_MOTS, 'Les mots');
+    const cartesMots = mots ? MotsModel.cartesDeMots(mots) : [];
 
     const points = DuelModel.pointsTotal(historique);
     const serie = DuelModel.serieDeJours(historique);
@@ -34,7 +36,7 @@ class ScoresApp {
             el('span', { class: 'etat' }, m.vues === 0 ? 'À découvrir' : m.acquises + ' acquises sur ' + m.total),
             el('div', { class: 'barre', role: 'img', 'aria-label': pct + ' pour cent acquis' }, el('i', { style: 'width:' + pct + '%' }))),
           etoiles(DuelModel.etoilesDe(m, DuelModel.seancesDuTheme(historique, t.key)))));
-      })),
+      }), this.ligneMots(cartesMots, progression, historique)),
 
       el('h2', {}, 'Mes dernières séances'),
       derniers.length
@@ -46,11 +48,24 @@ class ScoresApp {
       el('div', { class: 'actions' }, el('a', { class: 'bouton principal large', href: './' }, 'Jouer')));
   }
 
+  // Les mots invariables : une ligne de plus dans la liste des thèmes
+  ligneMots(cartes, progression, historique) {
+    if (!cartes.length) return null;
+    const m = DuelModel.maitrise(cartes, progression);
+    const pct = m.total ? Math.round(100 * m.acquises / m.total) : 0;
+    return el('li', {}, el('div', { class: 'ligne-theme' },
+      el('span', { style: 'flex:1' },
+        el('span', { class: 'nom-theme' }, 'Les mots'), el('br'),
+        el('span', { class: 'etat' }, m.vues === 0 ? 'À découvrir' : m.acquises + ' acquis sur ' + m.total),
+        el('div', { class: 'barre', role: 'img', 'aria-label': pct + ' pour cent acquis' }, el('i', { style: 'width:' + pct + '%' }))),
+      etoiles(DuelModel.etoilesDe(m, DuelModel.seancesDuTheme(historique, MotsModel.CLE_MOTS)))));
+  }
+
   chiffre(valeur, libelle) {
     return el('div', { class: 'chiffre' }, el('b', {}, valeur), el('span', {}, libelle));
   }
 }
 
-chargerDonnees()
-  .then(donnees => new ScoresApp(document.getElementById('app'), createStore(window.localStorage), donnees))
+Promise.all([chargerDonnees(), chargerMots().catch(() => null)])
+  .then(([donnees, mots]) => new ScoresApp(document.getElementById('app'), createStore(window.localStorage), donnees, mots))
   .catch(() => { document.getElementById('app').replaceChildren(el('p', {}, 'Impossible de charger les phrases. Vérifie la connexion puis recharge la page.')); });

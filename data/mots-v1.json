@@ -1,0 +1,430 @@
+{
+  "version": "0.1",
+  "description": "Mots invariables pour le jeu Les mots. Liste : Nomad Education (S47), dédoublonnée. Champ dit : phrase lue à voix haute quand le mot seul serait ambigu à l'oreille (à valider). Les mots de la catégorie copie viennent de la copie de Louis, pas de la liste.",
+  "sources": [
+    {
+      "id": "S47",
+      "titre": "Nomad Education : mots invariables CE1, CE2, CM1, CM2, liste et astuces",
+      "url": "https://www.nomadeducation.fr/blog/articles/2025-10-18/mots-invariables-ce1-ce2-cm1-cm2-liste-astuces"
+    }
+  ],
+  "categories": [
+    {
+      "key": "prepositions",
+      "label": "Les petits mots devant un nom",
+      "officiel": "Prépositions",
+      "mots": [
+        {
+          "mot": "à",
+          "dit": "à, comme dans : je vais à Paris"
+        },
+        {
+          "mot": "dans"
+        },
+        {
+          "mot": "sur"
+        },
+        {
+          "mot": "sous"
+        },
+        {
+          "mot": "chez"
+        },
+        {
+          "mot": "avec"
+        },
+        {
+          "mot": "sans"
+        },
+        {
+          "mot": "entre"
+        },
+        {
+          "mot": "parmi"
+        },
+        {
+          "mot": "vers"
+        },
+        {
+          "mot": "contre"
+        },
+        {
+          "mot": "pour"
+        },
+        {
+          "mot": "par",
+          "dit": "par, comme dans : par la fenêtre"
+        },
+        {
+          "mot": "de",
+          "dit": "de, comme dans : le livre de Paul"
+        },
+        {
+          "mot": "en",
+          "dit": "en, comme dans : je vais en France"
+        },
+        {
+          "mot": "depuis"
+        },
+        {
+          "mot": "pendant"
+        },
+        {
+          "mot": "avant"
+        },
+        {
+          "mot": "après"
+        }
+      ]
+    },
+    {
+      "key": "temps",
+      "label": "Les mots de temps",
+      "officiel": "Adverbes de temps",
+      "mots": [
+        {
+          "mot": "aujourd'hui"
+        },
+        {
+          "mot": "hier"
+        },
+        {
+          "mot": "demain"
+        },
+        {
+          "mot": "bientôt"
+        },
+        {
+          "mot": "tard"
+        },
+        {
+          "mot": "tôt"
+        },
+        {
+          "mot": "longtemps"
+        },
+        {
+          "mot": "désormais"
+        },
+        {
+          "mot": "encore"
+        },
+        {
+          "mot": "enfin"
+        },
+        {
+          "mot": "ensuite"
+        },
+        {
+          "mot": "alors"
+        },
+        {
+          "mot": "toujours"
+        },
+        {
+          "mot": "parfois"
+        },
+        {
+          "mot": "souvent"
+        },
+        {
+          "mot": "jamais"
+        }
+      ]
+    },
+    {
+      "key": "lieu",
+      "label": "Les mots de lieu",
+      "officiel": "Adverbes de lieu",
+      "mots": [
+        {
+          "mot": "ici"
+        },
+        {
+          "mot": "là",
+          "dit": "là, comme dans : il est là"
+        },
+        {
+          "mot": "ailleurs"
+        },
+        {
+          "mot": "partout"
+        },
+        {
+          "mot": "dessus"
+        },
+        {
+          "mot": "dessous"
+        },
+        {
+          "mot": "dedans"
+        },
+        {
+          "mot": "dehors"
+        },
+        {
+          "mot": "devant"
+        },
+        {
+          "mot": "derrière"
+        },
+        {
+          "mot": "autour"
+        },
+        {
+          "mot": "près"
+        },
+        {
+          "mot": "loin"
+        }
+      ]
+    },
+    {
+      "key": "maniere",
+      "label": "Les mots de manière",
+      "officiel": "Adverbes de manière",
+      "mots": [
+        {
+          "mot": "bien"
+        },
+        {
+          "mot": "mal"
+        },
+        {
+          "mot": "vite"
+        },
+        {
+          "mot": "doucement"
+        },
+        {
+          "mot": "fort",
+          "dit": "fort, comme dans : il parle fort"
+        },
+        {
+          "mot": "mieux"
+        },
+        {
+          "mot": "pire"
+        },
+        {
+          "mot": "exprès"
+        },
+        {
+          "mot": "ensemble"
+        },
+        {
+          "mot": "autrement"
+        }
+      ]
+    },
+    {
+      "key": "quantite",
+      "label": "Les mots de quantité",
+      "officiel": "Adverbes de quantité",
+      "mots": [
+        {
+          "mot": "beaucoup"
+        },
+        {
+          "mot": "peu"
+        },
+        {
+          "mot": "assez"
+        },
+        {
+          "mot": "trop"
+        },
+        {
+          "mot": "autant"
+        },
+        {
+          "mot": "davantage"
+        },
+        {
+          "mot": "plus",
+          "dit": "plus, comme dans : encore plus"
+        },
+        {
+          "mot": "moins"
+        },
+        {
+          "mot": "environ"
+        }
+      ]
+    },
+    {
+      "key": "negation",
+      "label": "Les mots pour dire non",
+      "officiel": "Adverbes de négation",
+      "mots": [
+        {
+          "mot": "ne",
+          "dit": "ne, comme dans : je ne sais pas"
+        },
+        {
+          "mot": "pas",
+          "dit": "pas, comme dans : je ne sais pas"
+        },
+        {
+          "mot": "guère"
+        },
+        {
+          "mot": "point",
+          "dit": "point, comme dans : je n'ai point de chat"
+        }
+      ]
+    },
+    {
+      "key": "liaison",
+      "label": "Les mots qui expliquent",
+      "officiel": "Adverbes de liaison et d'opinion",
+      "mots": [
+        {
+          "mot": "donc"
+        },
+        {
+          "mot": "ainsi"
+        },
+        {
+          "mot": "pourtant"
+        },
+        {
+          "mot": "cependant"
+        },
+        {
+          "mot": "toutefois"
+        },
+        {
+          "mot": "en effet"
+        },
+        {
+          "mot": "d'ailleurs"
+        },
+        {
+          "mot": "surtout"
+        },
+        {
+          "mot": "néanmoins"
+        }
+      ]
+    },
+    {
+      "key": "coordination",
+      "label": "Les mots qui relient",
+      "officiel": "Conjonctions de coordination",
+      "mots": [
+        {
+          "mot": "mais"
+        },
+        {
+          "mot": "ou",
+          "dit": "ou, comme dans : thé ou café"
+        },
+        {
+          "mot": "et",
+          "dit": "et, comme dans : toi et moi"
+        },
+        {
+          "mot": "or",
+          "dit": "or, comme dans : or il pleuvait"
+        },
+        {
+          "mot": "ni",
+          "dit": "ni, comme dans : ni toi ni moi"
+        },
+        {
+          "mot": "car",
+          "dit": "car, comme dans : car il pleut"
+        }
+      ]
+    },
+    {
+      "key": "subordination",
+      "label": "Les mots qui commencent une idée",
+      "officiel": "Conjonctions de subordination",
+      "mots": [
+        {
+          "mot": "que",
+          "dit": "que, comme dans : je pense que"
+        },
+        {
+          "mot": "quand"
+        },
+        {
+          "mot": "comme"
+        },
+        {
+          "mot": "lorsque"
+        },
+        {
+          "mot": "puisque"
+        },
+        {
+          "mot": "parce que"
+        },
+        {
+          "mot": "bien que"
+        },
+        {
+          "mot": "afin que"
+        },
+        {
+          "mot": "dès que"
+        },
+        {
+          "mot": "tant que"
+        },
+        {
+          "mot": "tandis que"
+        }
+      ]
+    },
+    {
+      "key": "interjections",
+      "label": "Les exclamations",
+      "officiel": "Interjections",
+      "mots": [
+        {
+          "mot": "oh",
+          "dit": "oh, comme dans : oh, quelle surprise !"
+        },
+        {
+          "mot": "ah",
+          "dit": "ah, comme dans : ah, d'accord !"
+        },
+        {
+          "mot": "zut"
+        },
+        {
+          "mot": "hé",
+          "dit": "hé, comme dans : hé, attends !"
+        },
+        {
+          "mot": "bravo"
+        },
+        {
+          "mot": "hélas"
+        },
+        {
+          "mot": "ouf"
+        },
+        {
+          "mot": "chouette"
+        }
+      ]
+    },
+    {
+      "key": "copie",
+      "label": "Les mots de ma copie",
+      "officiel": "Mots relevés sur la copie de Louis",
+      "mots": [
+        {
+          "mot": "comment"
+        },
+        {
+          "mot": "pourquoi"
+        }
+      ]
+    }
+  ]
+}

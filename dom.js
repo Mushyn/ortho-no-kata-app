@@ -76,3 +76,10 @@ function surlignerMots(texte, mots) {
   parts.push(reste);
   return parts;
 }
+
+// Charge la liste des mots du jeu « Les mots »
+async function chargerMots() {
+  const r = await fetch('data/mots-v1.json');
+  if (!r.ok) throw new Error('Mots introuvables');
+  return r.json();
+}

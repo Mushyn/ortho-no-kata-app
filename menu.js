@@ -7,9 +7,10 @@
 function insecable(texte) { return texte.replace(/ /g, '\u00a0').replace(/-/g, '\u2011'); }
 
 class MenuApp {
-  constructor(racine, store, donnees) {
+  constructor(racine, store, donnees, mots) {
     this.racine = racine;
     this.store = store;
+    this.cartesMots = mots ? MotsModel.cartesDeMots(mots) : [];
     this.cartes = DuelModel.toutesLesCartes(donnees);
     this.themes = DuelModel.themesDe(this.cartes);
     this.afficher();
@@ -40,6 +41,7 @@ class MenuApp {
 
       el('h2', {}, 'Ton parcours'),
       this.parcours(suggere, progression, historique),
+      this.carteMots(progression, historique),
 
       this.reglages(reglages));
   }
@@ -98,6 +100,23 @@ class MenuApp {
             el('span', { class: 'etat' }, 'Tous les thèmes ensemble. ' + (m.vues === 0 ? 'Quand tu te sens prêt.' : m.acquises + ' acquises sur ' + m.total))))));
     return el('ol', { class: 'parcours' }, noeuds, defi);
   }
+
+  // Le jeu des mots invariables : un seul bloc, après le parcours
+  carteMots(progression, historique) {
+    if (!this.cartesMots.length) return null;
+    const m = DuelModel.maitrise(this.cartesMots, progression);
+    const nb = DuelModel.seancesDuTheme(historique, MotsModel.CLE_MOTS);
+    return el('section', { class: 'noeud-mots' },
+      el('h2', {}, 'Les mots à connaître'),
+      el('div', { class: 'noeud-carte' },
+        el('a', { class: 'noeud-lien', href: 'mots.html' },
+          el('span', {},
+            el('span', { class: 'nom-theme' }, 'Écoute et écris'), el('br'),
+            el('span', { class: 'etat' }, m.vues === 0 ? 'Les mots invariables, ' + this.nombreDeMots() + ' à la fois' : m.acquises + ' acquis sur ' + m.total)),
+          etoiles(DuelModel.etoilesDe(m, nb)))));
+  }
+
+  nombreDeMots() { return this.store.getReglages().nombre; }
 
   reglages(reglages) {
     const regler = changement => {
@@ -158,6 +177,6 @@ class MenuApp {
   }
 }
 
-chargerDonnees()
-  .then(donnees => new MenuApp(document.getElementById('app'), createStore(window.localStorage), donnees))
+Promise.all([chargerDonnees(), chargerMots().catch(() => null)])
+  .then(([donnees, mots]) => new MenuApp(document.getElementById('app'), createStore(window.localStorage), donnees, mots))
   .catch(() => { document.getElementById('app').replaceChildren(el('p', {}, 'Impossible de charger les phrases. Vérifie la connexion puis recharge la page.')); });

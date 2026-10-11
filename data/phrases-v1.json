@@ -16,7 +16,7 @@
         "S7"
       ],
       "theme": "a / à",
-      "ordre": 4,
+      "ordre": 5,
       "lecon": {
         "situer": [
           "« a » et « à » se prononcent pareil.",
@@ -42,7 +42,7 @@
         "S7"
       ],
       "theme": "on / ont",
-      "ordre": 5,
+      "ordre": 6,
       "lecon": {
         "situer": [
           "« on » et « ont » se prononcent pareil.",
@@ -121,7 +121,7 @@
         "S33"
       ],
       "theme": "son / sont",
-      "ordre": 6,
+      "ordre": 7,
       "lecon": {
         "situer": [
           "« son » et « sont » se prononcent pareil.",
@@ -190,6 +190,32 @@
           "On change seulement le verbe de la phrase. Tout le reste ne bouge pas. Et on écoute laquelle des deux phrases est correcte."
         ],
         "reflechir": "Voici deux phrases. Dans chacune, on essaie mordre, puis mordu. Une seule sonne juste."
+      }
+    },
+    "quelle_quelle": {
+      "label": "quelle / qu'elle",
+      "question": "Je mets « qu'il » à la place : ça sonne juste ?",
+      "witness": "qu'il",
+      "confirms": [
+        "qu'elle"
+      ],
+      "otherwise": "quelle",
+      "sources": [
+        "S45",
+        "S46"
+      ],
+      "theme": "quelle / qu'elle",
+      "ordre": 4,
+      "lecon": {
+        "situer": [
+          "« quelle » et « qu'elle » se prononcent pareil.",
+          "« quelle » sert à poser une question ou à s'étonner, juste avant un nom : Quelle heure est-il ? Quelle belle journée ! « qu'elle » veut dire « que » + « elle » : Je pense qu'elle viendra."
+        ],
+        "observer": [
+          "On remplace par « qu'il » et on prononce la phrase.",
+          "Si elle sonne juste, c'est « que » + « elle » : j'écris « qu'elle ». Sinon, j'écris « quelle »."
+        ],
+        "reflechir": "Voici deux phrases. On essaie « qu'il » dans chacune."
       }
     }
   },
@@ -1952,6 +1978,226 @@
         "fermé"
       ],
       "answer": "fermer",
+      "valide": false
+    },
+    {
+      "id": "q-01",
+      "family": "quelle_quelle",
+      "text": "Je pense ___ viendra demain.",
+      "choices": [
+        "qu'elle",
+        "quelle"
+      ],
+      "answer": "qu'elle",
+      "valide": false
+    },
+    {
+      "id": "q-02",
+      "family": "quelle_quelle",
+      "text": "Dis-moi ___ heure il est.",
+      "choices": [
+        "quelle",
+        "qu'elle"
+      ],
+      "answer": "quelle",
+      "valide": false
+    },
+    {
+      "id": "q-03",
+      "family": "quelle_quelle",
+      "text": "Il faut ___ parte tout de suite.",
+      "choices": [
+        "qu'elle",
+        "quelle"
+      ],
+      "answer": "qu'elle",
+      "valide": false
+    },
+    {
+      "id": "q-04",
+      "family": "quelle_quelle",
+      "text": "Tu choisis ___ couleur ?",
+      "choices": [
+        "quelle",
+        "qu'elle"
+      ],
+      "answer": "quelle",
+      "valide": false
+    },
+    {
+      "id": "q-05",
+      "family": "quelle_quelle",
+      "text": "La robe ___ porte est rouge.",
+      "choices": [
+        "qu'elle",
+        "quelle"
+      ],
+      "answer": "qu'elle",
+      "valide": false
+    },
+    {
+      "id": "q-06",
+      "family": "quelle_quelle",
+      "text": "Regarde ___ belle journée !",
+      "choices": [
+        "quelle",
+        "qu'elle"
+      ],
+      "answer": "quelle",
+      "valide": false
+    },
+    {
+      "id": "q-07",
+      "family": "quelle_quelle",
+      "text": "Papa dit ___ est en retard.",
+      "choices": [
+        "qu'elle",
+        "quelle"
+      ],
+      "answer": "qu'elle",
+      "valide": false
+    },
+    {
+      "id": "q-08",
+      "family": "quelle_quelle",
+      "text": "Je ne sais pas ___ robe mettre.",
+      "choices": [
+        "quelle",
+        "qu'elle"
+      ],
+      "answer": "quelle",
+      "valide": false
+    },
+    {
+      "id": "q-09",
+      "family": "quelle_quelle",
+      "text": "Je sais ___ aime la musique.",
+      "choices": [
+        "qu'elle",
+        "quelle"
+      ],
+      "answer": "qu'elle",
+      "valide": false
+    },
+    {
+      "id": "q-10",
+      "family": "quelle_quelle",
+      "text": "Dis-moi ___ glace tu veux.",
+      "choices": [
+        "quelle",
+        "qu'elle"
+      ],
+      "answer": "quelle",
+      "valide": false
+    },
+    {
+      "id": "q-11",
+      "family": "quelle_quelle",
+      "text": "Le livre ___ lit est très long.",
+      "choices": [
+        "qu'elle",
+        "quelle"
+      ],
+      "answer": "qu'elle",
+      "valide": false
+    },
+    {
+      "id": "q-12",
+      "family": "quelle_quelle",
+      "text": "Elle demande ___ route prendre.",
+      "choices": [
+        "quelle",
+        "qu'elle"
+      ],
+      "answer": "quelle",
+      "valide": false
+    },
+    {
+      "id": "q-13",
+      "family": "quelle_quelle",
+      "text": "Maman veut ___ range sa chambre.",
+      "choices": [
+        "qu'elle",
+        "quelle"
+      ],
+      "answer": "qu'elle",
+      "valide": false
+    },
+    {
+      "id": "q-14",
+      "family": "quelle_quelle",
+      "text": "Oh ! ___ bonne idée !",
+      "choices": [
+        "quelle",
+        "qu'elle"
+      ],
+      "answer": "quelle",
+      "valide": false
+    },
+    {
+      "id": "q-15",
+      "family": "quelle_quelle",
+      "text": "Je crois ___ a raison.",
+      "choices": [
+        "qu'elle",
+        "quelle"
+      ],
+      "answer": "qu'elle",
+      "valide": false
+    },
+    {
+      "id": "q-16",
+      "family": "quelle_quelle",
+      "text": "Regarde ___ jolie fleur !",
+      "choices": [
+        "quelle",
+        "qu'elle"
+      ],
+      "answer": "quelle",
+      "valide": false
+    },
+    {
+      "id": "q-17",
+      "family": "quelle_quelle",
+      "text": "Le chat ___ caresse ronronne.",
+      "choices": [
+        "qu'elle",
+        "quelle"
+      ],
+      "answer": "qu'elle",
+      "valide": false
+    },
+    {
+      "id": "q-18",
+      "family": "quelle_quelle",
+      "text": "Dis-moi ___ saison tu préfères.",
+      "choices": [
+        "quelle",
+        "qu'elle"
+      ],
+      "answer": "quelle",
+      "valide": false
+    },
+    {
+      "id": "q-19",
+      "family": "quelle_quelle",
+      "text": "J'espère ___ gagnera le match.",
+      "choices": [
+        "qu'elle",
+        "quelle"
+      ],
+      "answer": "qu'elle",
+      "valide": false
+    },
+    {
+      "id": "q-20",
+      "family": "quelle_quelle",
+      "text": "Montre-moi ___ page tu lis.",
+      "choices": [
+        "quelle",
+        "qu'elle"
+      ],
+      "answer": "quelle",
       "valide": false
     }
   ]
