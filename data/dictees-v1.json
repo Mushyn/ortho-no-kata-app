@@ -6,6 +6,11 @@
       "id": "S48",
       "titre": "Studelio : 15 dictées pour préparer l'entrée en 6e (objectifs et progression seulement)",
       "url": "https://studelio.com/15-dictees-ete-6e-francais/"
+    },
+    {
+      "id": "S49",
+      "titre": "Studelio : dictées courtes de niveau 5e (objectifs et progression seulement, phrases originales)",
+      "url": "https://studelio.com/dictees-courtes-niveau-5e-vacances/"
     }
   ],
   "regles": {
@@ -112,12 +117,44 @@
         "S5",
         "S26"
       ]
+    },
+    "ez": {
+      "theme": "-ez : seulement avec vous",
+      "lignes": [
+        "On écrit -ez seulement quand le mot est avec « vous » : vous chantez.",
+        "Piège : « je pourrais vous aider » : le verbe aider est à l'infinitif, donc -er."
+      ],
+      "sources": [
+        "S3",
+        "S14",
+        "S35"
+      ]
+    },
+    "att": {
+      "theme": "L'adjectif après être, sembler, paraître",
+      "lignes": null,
+      "sources": []
+    },
+    "ps": {
+      "theme": "Le passé simple",
+      "lignes": null,
+      "sources": []
+    },
+    "cese": {
+      "theme": "ce / se",
+      "lignes": null,
+      "sources": []
+    },
+    "conn": {
+      "theme": "Les mots qui relient les idées",
+      "lignes": null,
+      "sources": []
     }
   },
   "niveaux": [
     {
       "key": "6e",
-      "label": "Niveau 6e",
+      "label": "Niveau 1",
       "dictees": [
         {
           "id": "d6-01",
@@ -267,6 +304,162 @@
             "Les vacances {sont|son_sont|son} bientôt finies {et|et_est_es|est} je suis prêt.",
             "Ma sœur {a|a_a|à} {rangé|er_e} ses affaires.",
             "Demain, nous irons {à|a_a|a} l'école pour {retrouver|er_e} nos amis."
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2",
+      "label": "Niveau 2",
+      "dictees": [
+        {
+          "id": "d2-01",
+          "titre": "À la bibliothèque",
+          "objectif": "Accord dans le groupe nominal",
+          "phrases": [
+            "Les {vieux|adj} livres {poussiéreux|adj} sentent le papier.",
+            "Une {longue|adj} table {ronde|adj} occupe le centre de la salle.",
+            "Les {nouvelles|adj} lectrices {silencieuses|adj} choisissent des romans {passionnants|adj}."
+          ]
+        },
+        {
+          "id": "d2-02",
+          "titre": "Chez le boulanger",
+          "objectif": "Pluriels en -aux, -eaux, -eux",
+          "phrases": [
+            "Le boulanger sort des {gâteaux|plx} {chauds|adj} du four.",
+            "Sur l'étagère, les {bocaux|plx} {neufs|adj} brillent.",
+            "Les {jeux|plx} de la vitrine attirent les passants."
+          ]
+        },
+        {
+          "id": "d2-03",
+          "titre": "Au camping",
+          "objectif": "Accorder le verbe avec son sujet",
+          "phrases": [
+            "Les campeurs {installent|sv} leur tente près du lac.",
+            "Mes parents et moi {dressons|sv} la table dehors.",
+            "Le soir, les étoiles {brillent|sv} au-dessus des arbres."
+          ]
+        },
+        {
+          "id": "d2-04",
+          "titre": "Au stade",
+          "objectif": "Accorder l'adjectif après être, sembler, paraître",
+          "phrases": [
+            "Les joueurs semblent {fatigués|att} après le match.",
+            "La gardienne paraît {contente|att} de sa journée.",
+            "Les gradins {sont|son_sont|son} {vides|att} depuis ce soir."
+          ]
+        },
+        {
+          "id": "d2-05",
+          "titre": "Après la neige",
+          "objectif": "Sujet, verbe et adjectif attribut",
+          "phrases": [
+            "Les routes {deviennent|sv} {glissantes|att}.",
+            "Mon frère {reste|sv} {prudent|att} sur son vélo.",
+            "Les flocons {tombent|sv} et la neige {est|et_est_es|et} {épaisse|att}."
+          ]
+        },
+        {
+          "id": "d2-06",
+          "titre": "Le grenier",
+          "objectif": "L'imparfait",
+          "phrases": [
+            "Autrefois, mon grand-père {rangeait|imp} ses outils dans ce grenier.",
+            "Nous {jouions|imp} avec de vieilles malles.",
+            "Les souris {grignotaient|imp} les cartons pendant la nuit."
+          ]
+        },
+        {
+          "id": "d2-07",
+          "titre": "Le vieux phare",
+          "objectif": "Le passé simple",
+          "phrases": [
+            "Le gardien {alluma|ps} la lampe à la tombée de la nuit.",
+            "Les vagues {frappèrent|ps} les rochers toute la nuit.",
+            "Au matin, nous {montâmes|ps} jusqu'au sommet."
+          ]
+        },
+        {
+          "id": "d2-08",
+          "titre": "Le cerf-volant",
+          "objectif": "Être ou avoir, et le participe passé",
+          "phrases": [
+            "Mes cousines sont {arrivées|pe} hier soir.",
+            "Nous avons {fabriqué|er_e} un cerf-volant rouge.",
+            "Les nuages {sont|son_sont|son} {partis|pe} et le vent {a|a_a|à} {soufflé|er_e} fort."
+          ]
+        },
+        {
+          "id": "d2-09",
+          "titre": "Avant le départ",
+          "objectif": "ce / se",
+          "phrases": [
+            "Paul {se|cese} lève tôt {ce|cese} matin.",
+            "Il {se|cese} dépêche de ranger {ce|cese} sac.",
+            "Mes amis {se|cese} retrouvent devant {ce|cese} grand portail."
+          ]
+        },
+        {
+          "id": "d2-10",
+          "titre": "Le goûter",
+          "objectif": "ces / ses et c'est / s'est",
+          "phrases": [
+            "Léa partage {ses|cs} biscuits avec {ces|cs} garçons.",
+            "Mon voisin {s'est|cest_sest|c'est} installé sous {ces|cs} arbres.",
+            "Demain, {c'est|cest_sest|s'est} mon anniversaire."
+          ]
+        },
+        {
+          "id": "d2-11",
+          "titre": "La leçon à réviser",
+          "objectif": "-er, -é ou -ez",
+          "phrases": [
+            "Vous {chantez|ez} très bien cette chanson.",
+            "Pour {réviser|er_e}, vous {écoutez|ez} votre maître et {copiez|ez} la leçon.",
+            "J'ai {oublié|er_e} de {fermer|er_e} la fenêtre."
+          ]
+        },
+        {
+          "id": "d2-12",
+          "titre": "Le choix du film",
+          "objectif": "Les mots qui relient les idées et la virgule",
+          "phrases": [
+            "Il pleuvait, {mais|conn} nous sommes sortis quand même.",
+            "Le film était long, {pourtant|conn} personne ne s'est ennuyé.",
+            "J'ai froid, {donc|conn} je prends mon manteau."
+          ]
+        },
+        {
+          "id": "d2-13",
+          "titre": "Le feu de camp",
+          "objectif": "Accords et vocabulaire de la lumière et du bruit",
+          "phrases": [
+            "Les flammes {orangées|adj} {dansent|sv} dans la nuit.",
+            "Le bois {crépite|sv}, les étincelles {jaillissent|sv}.",
+            "Soudain, un cri {aigu|adj} {retentit|sv} dans la forêt."
+          ]
+        },
+        {
+          "id": "d2-14",
+          "titre": "La traversée en bateau",
+          "objectif": "Imparfait et passé simple dans un récit",
+          "phrases": [
+            "Le vent {soufflait|imp} fort quand le capitaine {cria|ps}.",
+            "Les passagers {inquiets|adj} {serrèrent|ps} leurs gilets.",
+            "Enfin, la terre {apparut|ps} devant eux."
+          ]
+        },
+        {
+          "id": "d2-15",
+          "titre": "Le grand bilan",
+          "objectif": "Tout ce qu'on a appris",
+          "phrases": [
+            "Mes sœurs {sont|son_sont|son} {rentrées|pe} {et|et_est_es|est} elles {ont|on_ont|on} faim.",
+            "Goûte {ces|cs} {gâteaux|plx} {chauds|adj} !",
+            "Demain, vous {chanterez|futur} et {on|on_ont|ont} {dansera|futur}."
           ]
         }
       ]

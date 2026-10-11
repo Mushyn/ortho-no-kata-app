@@ -30,7 +30,7 @@ function cartesDeMots(donnees) {
 // Pour comparer : sans différence de majuscules, d'espaces ni d'apostrophe typographique.
 // Les accents, eux, comptent.
 function normaliser(texte) {
-  return String(texte).normalize('NFC').replace(/[’‘`´]/g, "'").trim().toLowerCase().replace(/\s+/g, ' ');
+  return String(texte).normalize('NFC').replace(/[’‘`´]/g, "'").replace(/\u0153/gi, 'oe').replace(/\u00e6/gi, 'ae').trim().toLowerCase().replace(/\s+/g, ' ');
 }
 
 // Compare le mot attendu et ce qui a été écrit. Retourne
@@ -57,6 +57,7 @@ function comparer(attendu, saisi) {
   }
   return {
     juste: a.join('') === s.join(''),
+    ligature: a.join('') === s.join('') && /[\u0153\u00e6]/i.test(attendu) && !/[\u0153\u00e6]/i.test(saisi),
     attendu: a.map((c, k) => ({ c, ok: okA[k] })),
     ecrit: s.map((c, k) => ({ c, ok: okS[k] }))
   };

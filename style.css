@@ -245,6 +245,7 @@ label { font-weight: 700; font-size: .9rem; }
 .verdict h2 { margin: 0 0 6px; font-size: 1.5rem; }
 .verdict.juste h2 { color: var(--vert); }
 .verdict.rate h2 { color: var(--rouge); }
+.verdict .remarque { margin: 8px 0 0; padding: 8px 10px; border-radius: var(--rayon); border: 2px solid #f59e0b; background: rgba(245, 158, 11, .15); font-weight: 600; font-size: .95rem; }
 .verdict .conclusion { font-weight: 700; }
 .truc-titre { font-family: var(--titre); font-style: var(--titre-style); font-weight: var(--titre-poids); margin: 12px 0 4px; }
 .truc { margin: 0 0 8px; font-size: 1.05rem; }

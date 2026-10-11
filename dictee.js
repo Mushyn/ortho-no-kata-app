@@ -30,10 +30,11 @@ class DicteeApp {
 
   voixPossible() { return this.reglages.voix && 'speechSynthesis' in window; }
 
+  // Le texte est dicté avec sa ponctuation dite à voix haute (virgule, point...)
   lire(texte, lent) {
     try {
       speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(texte);
+      const u = new SpeechSynthesisUtterance(DicteesModel.dicter(texte));
       u.lang = 'fr-FR';
       u.rate = lent ? 0.6 : 0.85;
       speechSynthesis.speak(u);
@@ -51,7 +52,7 @@ class DicteeApp {
         el('h2', {}, 'Mini-dictée : ' + d.titre),
         el('p', { class: 'texte' }, this.niveau.label + '. ' + this.jeu.base + ' phrases : tu écoutes, tu écris, puis on corrige ensemble.'),
         el('p', { class: 'texte' }, 'On travaille : ', el('span', { class: 'surligne' }, d.objectif), '.'),
-        el('p', { class: 'discret' }, 'N\'oublie pas la majuscule au début et le point à la fin.')),
+        el('p', { class: 'texte' }, 'Comme à l\'école, l\'ordinateur dit la ponctuation : « virgule », « point »… Tu écris le signe (, .) et pas le mot. N\'oublie pas la majuscule au début.')),
       el('div', { class: 'actions' },
         el('button', { type: 'button', class: 'bouton principal large', onclick: () => { this.jeu.commencer(); this.phrase(); } }, 'C\'est parti')));
   }
@@ -112,7 +113,8 @@ class DicteeApp {
     const bouton = this.boutonSuite(dernier ? 'Terminer' : 'Phrase suivante →', suivant);
 
     if (r.juste) {
-      zone.replaceChildren(el('div', { class: 'verdict juste' }, el('h2', {}, 'Bravo !'), el('p', { class: 'phrase-verifiee' }, carte.texte)));
+      zone.replaceChildren(el('div', { class: 'verdict juste' }, el('h2', {}, 'Bravo !'), el('p', { class: 'phrase-verifiee' }, carte.texte),
+        ...(r.ligature ? [el('p', { class: 'remarque' }, 'Petite remarque : on écrit « œ » (un e collé dans le o). « oe » est accepté, mais ce n\'est pas tout à fait ça.')] : [])));
       valider.replaceWith(bouton);
       return;
     }
@@ -131,14 +133,14 @@ class DicteeApp {
       el('p', { class: 'phrase-verifiee' }, this.mots(champ.value.trim(), r.comparaison.ecrit, 'l-faux')),
       el('p', { class: 'discret' }, 'La phrase :'),
       el('p', { class: 'phrase-verifiee' }, this.mots(carte.texte, r.comparaison.attendu, 'l-manque')),
-      this.corrections(carte, r.erreurs),
+      this.corrections(carte, r.erreurs, champ.value),
       el('label', { for: 'copie' }, 'Recopie la phrase'), copie, message));
     valider.replaceWith(bouton);
     copie.focus({ preventScroll: true });
   }
 
   // Les contextes et astuces : un bloc par point à corriger
-  corrections(carte, erreurs) {
+  corrections(carte, erreurs, saisie) {
     const blocs = erreurs.points.map(p => {
       const k = p.correction;
       let contenu;
@@ -154,6 +156,10 @@ class DicteeApp {
       }
       return el('div', { class: 'correction' }, el('div', { class: 'truc-titre' }, 'Pour « ' + p.mot + ' » : ' + k.theme), contenu);
     });
+    const motsDits = (saisie.match(/\b(virgule|point-virgule|deux points|point d'interrogation|point d'exclamation)\b/gi) || []);
+    if (motsDits.length) {
+      blocs.push(el('p', { class: 'truc' }, 'La ponctuation se dit à voix haute, mais s\'écrit avec le signe : une virgule s\'écrit « , », un point s\'écrit « . », un point d\'interrogation s\'écrit « ? ».'));
+    }
     if (erreurs.autres.length) {
       blocs.push(el('p', { class: 'discret' }, 'À revoir aussi : ' + erreurs.autres.map(m => '« ' + m + ' »').join(', ') + '.'));
     }

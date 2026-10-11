@@ -1,7 +1,7 @@
 // Service worker : généré par `node tools/build-sw.js` (ne pas modifier sw.js à la main).
 // Le nom du cache change dès qu'un fichier de l'appli change : c'est ce qui déclenche
 // la bannière « Nouvelle version disponible ».
-const CACHE_NAME = 'ortho-no-kata-aeec4ac1';
+const CACHE_NAME = 'ortho-no-kata-3ac1361a';
 const ASSETS = [
   "./",
   "data/dictees-v1.json",

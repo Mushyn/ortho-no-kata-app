@@ -128,7 +128,8 @@ class MotsApp {
     const suivant = () => { this.jeu.suivante(); this.afficher(); };
 
     if (r.juste) {
-      zone.replaceChildren(el('div', { class: 'verdict juste' }, el('h2', {}, 'Bravo !'), el('p', { class: 'mot-verifie' }, carte.mot)));
+      zone.replaceChildren(el('div', { class: 'verdict juste' }, el('h2', {}, 'Bravo !'), el('p', { class: 'mot-verifie' }, carte.mot),
+        ...(r.ligature ? [el('p', { class: 'remarque' }, 'Petite remarque : on écrit « œ » (un e collé dans le o). « oe » est accepté, mais ce n\'est pas tout à fait ça.')] : [])));
       valider.textContent = this.jeu.index + 1 >= this.jeu.file.length ? 'Terminer' : 'Mot suivant →';
       valider.onclick = null;
       valider.replaceWith(this.boutonSuite(valider.textContent, suivant));

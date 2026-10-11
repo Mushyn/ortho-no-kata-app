@@ -69,12 +69,25 @@ function niveauxDe(donnees, phrases) {
   });
 }
 
+// ── Dicter : comme à l'école, la ponctuation est dite à voix haute ─────────
+// « Demain, nous irons. » devient « Demain, virgule, nous irons, point. »
+const PONCTUATION_DITE = {
+  ',': ', virgule, ', '.': ', point. ', '?': ", point d'interrogation. ",
+  '!': ", point d'exclamation. ", ':': ', deux points, ', ';': ', point-virgule, '
+};
+function dicter(texte) {
+  const propre = String(texte).normalize('NFC').replace(/[\u2019\u2018`\u00b4]/g, "'");
+  return propre.replace(/\s*([,.?!:;])\s*/g, (m, signe) => PONCTUATION_DITE[signe]).trim();
+}
+
 // ── Comparaison mot à mot ──────────────────────────────────────────────────
 // Un mot = des lettres (avec l'apostrophe qui les suit : « l' », « qu' »), un signe de ponctuation = un mot.
 // Les majuscules et les accents comptent ; les espaces autour de la ponctuation, non.
+// Le « œ » est difficile à taper : « oe » est accepté à sa place (sœur = soeur), dans le texte attendu comme dans la saisie
+function sansLigature(texte) { return texte.replace(/\u0153/g, 'oe').replace(/\u0152/g, 'Oe').replace(/\u00e6/g, 'ae').replace(/\u00c6/g, 'Ae'); }
 function decouper(texte) {
   const propre = String(texte).normalize('NFC').replace(/[’‘`´]/g, "'");
-  return Array.from(propre.matchAll(/[\p{L}\p{N}-]+'?|[^\s\p{L}\p{N}]/gu)).map(m => ({ t: m[0], debut: m.index, fin: m.index + m[0].length }));
+  return Array.from(propre.matchAll(/[\p{L}\p{N}-]+'?|[^\s\p{L}\p{N}]/gu)).map(m => ({ t: m[0], c: sansLigature(m[0]), debut: m.index, fin: m.index + m[0].length }));
 }
 
 function comparerPhrase(attendu, saisi) {
@@ -83,19 +96,21 @@ function comparerPhrase(attendu, saisi) {
   const t = Array.from({ length: a.length + 1 }, () => new Array(s.length + 1).fill(0));
   for (let i = a.length - 1; i >= 0; i--) {
     for (let j = s.length - 1; j >= 0; j--) {
-      t[i][j] = a[i].t === s[j].t ? t[i + 1][j + 1] + 1 : Math.max(t[i + 1][j], t[i][j + 1]);
+      t[i][j] = a[i].c === s[j].c ? t[i + 1][j + 1] + 1 : Math.max(t[i + 1][j], t[i][j + 1]);
     }
   }
   const okA = new Array(a.length).fill(false);
   const okS = new Array(s.length).fill(false);
   let i = 0, j = 0;
   while (i < a.length && j < s.length) {
-    if (a[i].t === s[j].t) { okA[i] = okS[j] = true; i++; j++; }
+    if (a[i].c === s[j].c) { okA[i] = okS[j] = true; i++; j++; }
     else if (t[i + 1][j] >= t[i][j + 1]) i++;
     else j++;
   }
   return {
     juste: a.length === s.length && okA.every(Boolean),
+    // juste, mais « oe » écrit à la place de « œ » : remarque non bloquante
+    ligature: a.length === s.length && okA.every(Boolean) && /[\u0153\u00e6]/i.test(attendu) && !/[\u0153\u00e6]/i.test(saisi),
     attendu: a.map((x, k) => Object.assign({}, x, { ok: okA[k] })),
     ecrit: s.map((x, k) => Object.assign({}, x, { ok: okS[k] }))
   };
@@ -184,7 +199,7 @@ class DicteeGame {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { cleDeThemeDictee, lireBalises, niveauxDe, decouper, comparerPhrase, erreursDe, choisirDictee, etatDesNiveaux, DicteeGame, NIVEAU_SUIVANT_ETOILES };
+  module.exports = { cleDeThemeDictee, lireBalises, niveauxDe, dicter, decouper, comparerPhrase, erreursDe, choisirDictee, etatDesNiveaux, DicteeGame, NIVEAU_SUIVANT_ETOILES };
 } else {
-  window.DicteesModel = { cleDeThemeDictee, lireBalises, niveauxDe, decouper, comparerPhrase, erreursDe, choisirDictee, etatDesNiveaux, DicteeGame, NIVEAU_SUIVANT_ETOILES };
+  window.DicteesModel = { cleDeThemeDictee, lireBalises, niveauxDe, dicter, decouper, comparerPhrase, erreursDe, choisirDictee, etatDesNiveaux, DicteeGame, NIVEAU_SUIVANT_ETOILES };
 }
