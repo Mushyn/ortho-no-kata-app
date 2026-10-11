@@ -1,0 +1,275 @@
+{
+  "version": "0.1",
+  "description": "Mini-dictées, une phrase par carte. Phrases écrites pour l'appli (les dictées Studelio sont sous droits réservés : seuls leurs objectifs et leur progression ont inspiré cette liste). Les points à corriger sont marqués {mot|famille|autre mot possible}. A relire.",
+  "sources": [
+    {
+      "id": "S48",
+      "titre": "Studelio : 15 dictées pour préparer l'entrée en 6e (objectifs et progression seulement)",
+      "url": "https://studelio.com/15-dictees-ete-6e-francais/"
+    }
+  ],
+  "regles": {
+    "cest_sest": {
+      "theme": "c'est / s'est",
+      "question": "Je mets « cela est » à la place : ça sonne juste ?",
+      "witness": "cela est",
+      "confirms": [
+        "c'est"
+      ],
+      "otherwise": "s'est",
+      "sources": [
+        "S2",
+        "S7"
+      ]
+    },
+    "la_la": {
+      "theme": "la / là",
+      "question": "Je mets « ici » à la place : ça sonne juste ?",
+      "witness": "ici",
+      "confirms": [
+        "là"
+      ],
+      "otherwise": "la",
+      "sources": [
+        "S7",
+        "S10"
+      ]
+    }
+  },
+  "astuces": {
+    "sv": {
+      "theme": "Le verbe et celui qui fait l'action",
+      "lignes": [
+        "Je trouve qui fait l'action avec « c'est … qui » (ou « ce sont … qui »).",
+        "Je remplace par « il / elle » ou « ils / elles » : c'est le seul moyen de distinguer aime et aiment."
+      ],
+      "sources": [
+        "S4"
+      ]
+    },
+    "pl": {
+      "theme": "Le pluriel des noms",
+      "lignes": [
+        "Cas général : on ajoute -s."
+      ],
+      "sources": [
+        "S12"
+      ]
+    },
+    "adj": {
+      "theme": "L'adjectif et le nom",
+      "lignes": [
+        "Le petit mot devant le nom et l'adjectif prennent le même nombre et le même genre que le nom.",
+        "Pour vérifier, je mets le groupe au pluriel ou au féminin."
+      ],
+      "sources": [
+        "S12"
+      ]
+    },
+    "imp": {
+      "theme": "L'imparfait",
+      "lignes": [
+        "Avec je ou tu : -ais. Avec il, elle ou on : -ait. Avec ils ou elles : -aient."
+      ],
+      "sources": [
+        "S14"
+      ]
+    },
+    "futur": {
+      "theme": "Le futur",
+      "lignes": null,
+      "sources": []
+    },
+    "pe": {
+      "theme": "Le participe avec être",
+      "lignes": [
+        "Avec être, le participe s'accorde avec celui qui fait l'action : elle est partie, ils sont arrivés.",
+        "Pour voir la lettre cachée, je mets au féminin."
+      ],
+      "sources": [
+        "S6",
+        "S19"
+      ]
+    },
+    "cs": {
+      "theme": "ces / ses",
+      "lignes": [
+        "ses : je peux mettre mes ou tes (ses cerises, mes cerises).",
+        "ces : je peux mettre ce ou cette au singulier (ces fruits, ce fruit)."
+      ],
+      "sources": [
+        "S2",
+        "S7"
+      ]
+    },
+    "plx": {
+      "theme": "Le pluriel en -x",
+      "lignes": [
+        "Les noms en -ou prennent -s, sauf 7 : chou, bijou, joujou, genou, caillou, hibou, pou (ils prennent -x).",
+        "Les noms en -eau prennent -x : un chameau, des chameaux."
+      ],
+      "sources": [
+        "S5",
+        "S26"
+      ]
+    }
+  },
+  "niveaux": [
+    {
+      "key": "6e",
+      "label": "Niveau 6e",
+      "dictees": [
+        {
+          "id": "d6-01",
+          "titre": "Dans la voiture",
+          "objectif": "Accorder le verbe et mettre les noms au pluriel",
+          "phrases": [
+            "Les enfants {chantent|sv} dans la voiture.",
+            "Nous {regardons|sv} les {nuages|pl} par la fenêtre.",
+            "Les {routes|pl} {sont|son_sont|son} {longues|adj} aujourd'hui."
+          ]
+        },
+        {
+          "id": "d6-02",
+          "titre": "Sur la plage",
+          "objectif": "Accorder l'adjectif avec le nom",
+          "phrases": [
+            "Les vagues {bleues|adj} arrivent sur le sable {doré|adj}.",
+            "Une petite brise {fraîche|adj} souffle sur la plage.",
+            "Ma sœur ramasse de jolis coquillages {blancs|adj}."
+          ]
+        },
+        {
+          "id": "d6-03",
+          "titre": "La glace",
+          "objectif": "a / à",
+          "phrases": [
+            "Louise {a|a_a|à} très envie d'une glace.",
+            "Elle va {à|a_a|a} la boutique près de la plage.",
+            "Il {a|a_a|à} choisi un parfum {à|a_a|a} la fraise."
+          ]
+        },
+        {
+          "id": "d6-04",
+          "titre": "Le château de sable",
+          "objectif": "et / est",
+          "phrases": [
+            "Mon château {est|et_est_es|et} très haut {et|et_est_es|est} solide.",
+            "La tour {est|et_est_es|et} ronde {et|et_est_es|est} le pont {est|et_est_es|et} long.",
+            "Le vent souffle {et|et_est_es|est} la mer {est|et_est_es|et} calme."
+          ]
+        },
+        {
+          "id": "d6-05",
+          "titre": "Dans l'eau",
+          "objectif": "on / ont",
+          "phrases": [
+            "Mes cousins {ont|on_ont|on} apporté un grand ballon.",
+            "Ce matin, {on|on_ont|ont} joue dans l'eau.",
+            "Les enfants {ont|on_ont|on} très chaud."
+          ]
+        },
+        {
+          "id": "d6-06",
+          "titre": "Le pique-nique",
+          "objectif": "son / sont",
+          "phrases": [
+            "Les sandwichs {sont|son_sont|son} posés sur la nappe.",
+            "Léo cherche {son|son_sont|sont} chapeau.",
+            "Ses frères {sont|son_sont|son} déjà arrivés avec leurs paniers."
+          ]
+        },
+        {
+          "id": "d6-07",
+          "titre": "À la ferme",
+          "objectif": "L'imparfait",
+          "phrases": [
+            "Chaque matin, le coq {chantait|imp} très tôt.",
+            "Les vaches {mangeaient|imp} l'herbe du pré.",
+            "Elle {donnait|imp} du foin aux chevaux."
+          ]
+        },
+        {
+          "id": "d6-08",
+          "titre": "Le prochain voyage",
+          "objectif": "Le futur",
+          "phrases": [
+            "L'été prochain, nous {irons|futur} en Italie.",
+            "Je {prendrai|futur} le train avec ma sœur.",
+            "Vous {verrez|futur} de belles églises."
+          ]
+        },
+        {
+          "id": "d6-09",
+          "titre": "L'orage",
+          "objectif": "Le participe avec être",
+          "phrases": [
+            "Léa est {partie|pe} avant l'orage.",
+            "Les nuages {sont|son_sont|son} {arrivés|pe} très vite.",
+            "Mes sœurs sont {rentrées|pe} à la maison."
+          ]
+        },
+        {
+          "id": "d6-10",
+          "titre": "La cueillette",
+          "objectif": "ces / ses",
+          "phrases": [
+            "Mamie cueille {ses|cs} cerises rouges.",
+            "Regarde {ces|cs} fruits mûrs sur l'arbre.",
+            "Julie range {ses|cs} paniers dans la cabane."
+          ]
+        },
+        {
+          "id": "d6-11",
+          "titre": "Au marché",
+          "objectif": "Le pluriel en -x",
+          "phrases": [
+            "Maman achète des {choux|plx} et des carottes.",
+            "Le marchand vend de beaux {couteaux|plx}.",
+            "Les {bijoux|plx} brillent sur le stand."
+          ]
+        },
+        {
+          "id": "d6-12",
+          "titre": "La pétanque",
+          "objectif": "ou / où",
+          "phrases": [
+            "Dis-moi {où|ou_ou|ou} tu as rangé les boules.",
+            "Veux-tu jouer aux boules {ou|ou_ou|où} aux cartes ?",
+            "Voici le terrain {où|ou_ou|ou} nous jouons."
+          ]
+        },
+        {
+          "id": "d6-13",
+          "titre": "Le coucher de soleil",
+          "objectif": "-er / -é",
+          "phrases": [
+            "Nous avons {regardé|er_e} le soleil se {coucher|er_e}.",
+            "Le ciel a {changé|er_e} de couleur.",
+            "Nous allons {rentrer|er_e} avant la nuit."
+          ]
+        },
+        {
+          "id": "d6-14",
+          "titre": "La lettre",
+          "objectif": "c'est / s'est et la / là",
+          "phrases": [
+            "Demain, {c'est|cest_sest|s'est} la fin des vacances.",
+            "Ma cousine {s'est|cest_sest|c'est} bien amusée ici.",
+            "Ma tente est {là|la_la|la}, près de {la|la_la|là} rivière."
+          ]
+        },
+        {
+          "id": "d6-15",
+          "titre": "Prêt pour la sixième",
+          "objectif": "Tout ce qu'on a appris",
+          "phrases": [
+            "Les vacances {sont|son_sont|son} bientôt finies {et|et_est_es|est} je suis prêt.",
+            "Ma sœur {a|a_a|à} {rangé|er_e} ses affaires.",
+            "Demain, nous irons {à|a_a|a} l'école pour {retrouver|er_e} nos amis."
+          ]
+        }
+      ]
+    }
+  ]
+}

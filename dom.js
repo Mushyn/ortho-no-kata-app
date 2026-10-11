@@ -83,3 +83,10 @@ async function chargerMots() {
   if (!r.ok) throw new Error('Mots introuvables');
   return r.json();
 }
+
+// Charge les mini-dictées
+async function chargerDictees() {
+  const r = await fetch('data/dictees-v1.json');
+  if (!r.ok) throw new Error('Dictées introuvables');
+  return r.json();
+}

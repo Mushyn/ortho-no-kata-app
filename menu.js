@@ -7,9 +7,10 @@
 function insecable(texte) { return texte.replace(/ /g, '\u00a0').replace(/-/g, '\u2011'); }
 
 class MenuApp {
-  constructor(racine, store, donnees, mots) {
+  constructor(racine, store, donnees, mots, dictees) {
     this.racine = racine;
     this.store = store;
+    this.niveauxDictee = dictees ? DicteesModel.niveauxDe(dictees, donnees) : [];
     this.cartesMots = mots ? MotsModel.cartesDeMots(mots) : [];
     this.cartes = DuelModel.toutesLesCartes(donnees);
     this.themes = DuelModel.themesDe(this.cartes);
@@ -42,6 +43,7 @@ class MenuApp {
       el('h2', {}, 'Ton parcours'),
       this.parcours(suggere, progression, historique),
       this.carteMots(progression, historique),
+      this.carteDictees(progression, historique),
 
       this.reglages(reglages));
   }
@@ -118,6 +120,25 @@ class MenuApp {
 
   nombreDeMots() { return this.store.getReglages().nombre; }
 
+  // Les mini-dictées : un niveau après l'autre, le suivant s'ouvre avec 2 étoiles
+  carteDictees(progression, historique) {
+    if (!this.niveauxDictee.length) return null;
+    const etats = DicteesModel.etatDesNiveaux(this.niveauxDictee, progression, historique);
+    return el('section', { class: 'noeud-mots' },
+      el('h2', {}, 'Les mini-dictées'),
+      etats.map((e, i) => {
+        const contenu = el('span', {},
+          el('span', { class: 'nom-theme' }, (e.debloque ? '' : '🔒 ') + e.niveau.label), el('br'),
+          el('span', { class: 'etat' }, !e.debloque
+            ? 'S\'ouvre avec ' + DicteesModel.NIVEAU_SUIVANT_ETOILES + ' étoiles en ' + etats[i - 1].niveau.label.replace('Niveau ', '')
+            : (e.maitrise.vues === 0 ? '3 phrases à écouter et à écrire' : e.maitrise.acquises + ' phrases acquises sur ' + e.maitrise.total)));
+        return el('div', { class: 'noeud-carte' + (e.debloque ? '' : ' verrouille'), style: 'margin-top:10px' },
+          e.debloque
+            ? el('a', { class: 'noeud-lien', href: 'dictee.html?niveau=' + e.niveau.key }, contenu, etoiles(e.etoiles))
+            : el('div', { class: 'noeud-lien' }, contenu));
+      }));
+  }
+
   reglages(reglages) {
     const regler = changement => {
       this.store.saveReglages(Object.assign({}, this.store.getReglages(), changement));
@@ -177,6 +198,6 @@ class MenuApp {
   }
 }
 
-Promise.all([chargerDonnees(), chargerMots().catch(() => null)])
-  .then(([donnees, mots]) => new MenuApp(document.getElementById('app'), createStore(window.localStorage), donnees, mots))
+Promise.all([chargerDonnees(), chargerMots().catch(() => null), chargerDictees().catch(() => null)])
+  .then(([donnees, mots, dictees]) => new MenuApp(document.getElementById('app'), createStore(window.localStorage), donnees, mots, dictees))
   .catch(() => { document.getElementById('app').replaceChildren(el('p', {}, 'Impossible de charger les phrases. Vérifie la connexion puis recharge la page.')); });

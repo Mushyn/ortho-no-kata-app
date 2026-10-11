@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 class ScoresApp {
-  constructor(racine, store, donnees, mots) {
+  constructor(racine, store, donnees, mots, dictees) {
     const cartes = DuelModel.toutesLesCartes(donnees);
     const themes = DuelModel.themesDe(cartes);
     const progression = store.getProgression();
@@ -11,6 +11,8 @@ class ScoresApp {
     const noms = new Map(themes.map(t => [t.key, t.theme]));
     noms.set('tout', 'Mélange');
     noms.set(MotsModel.CLE_MOTS, 'Les mots');
+    const niveauxDictee = dictees ? DicteesModel.niveauxDe(dictees, donnees) : [];
+    niveauxDictee.forEach(n => noms.set(DicteesModel.cleDeThemeDictee(n.key), 'Dictée ' + n.key));
     const cartesMots = mots ? MotsModel.cartesDeMots(mots) : [];
 
     const points = DuelModel.pointsTotal(historique);
@@ -36,7 +38,8 @@ class ScoresApp {
             el('span', { class: 'etat' }, m.vues === 0 ? 'À découvrir' : m.acquises + ' acquises sur ' + m.total),
             el('div', { class: 'barre', role: 'img', 'aria-label': pct + ' pour cent acquis' }, el('i', { style: 'width:' + pct + '%' }))),
           etoiles(DuelModel.etoilesDe(m, DuelModel.seancesDuTheme(historique, t.key)))));
-      }), this.ligneMots(cartesMots, progression, historique)),
+      }), this.ligneMots(cartesMots, progression, historique),
+        niveauxDictee.map(n => this.ligneDictee(n, progression, historique))),
 
       el('h2', {}, 'Mes dernières séances'),
       derniers.length
@@ -61,11 +64,23 @@ class ScoresApp {
       etoiles(DuelModel.etoilesDe(m, DuelModel.seancesDuTheme(historique, MotsModel.CLE_MOTS)))));
   }
 
+  // Une ligne par niveau de mini-dictée
+  ligneDictee(niveau, progression, historique) {
+    const m = DuelModel.maitrise(niveau.cartes, progression);
+    const pct = m.total ? Math.round(100 * m.acquises / m.total) : 0;
+    return el('li', {}, el('div', { class: 'ligne-theme' },
+      el('span', { style: 'flex:1' },
+        el('span', { class: 'nom-theme' }, 'Dictée ' + niveau.key), el('br'),
+        el('span', { class: 'etat' }, m.vues === 0 ? 'À découvrir' : m.acquises + ' phrases acquises sur ' + m.total),
+        el('div', { class: 'barre', role: 'img', 'aria-label': pct + ' pour cent acquis' }, el('i', { style: 'width:' + pct + '%' }))),
+      etoiles(DuelModel.etoilesDe(m, DuelModel.seancesDuTheme(historique, DicteesModel.cleDeThemeDictee(niveau.key))))));
+  }
+
   chiffre(valeur, libelle) {
     return el('div', { class: 'chiffre' }, el('b', {}, valeur), el('span', {}, libelle));
   }
 }
 
-Promise.all([chargerDonnees(), chargerMots().catch(() => null)])
-  .then(([donnees, mots]) => new ScoresApp(document.getElementById('app'), createStore(window.localStorage), donnees, mots))
+Promise.all([chargerDonnees(), chargerMots().catch(() => null), chargerDictees().catch(() => null)])
+  .then(([donnees, mots, dictees]) => new ScoresApp(document.getElementById('app'), createStore(window.localStorage), donnees, mots, dictees))
   .catch(() => { document.getElementById('app').replaceChildren(el('p', {}, 'Impossible de charger les phrases. Vérifie la connexion puis recharge la page.')); });
