@@ -16,6 +16,21 @@
       "id": "S50",
       "titre": "Studelio : 15 dictées courtes de 4e (objectifs et progression seulement, phrases originales)",
       "url": "https://studelio.com/15-dictees-courtes-4e-francais/"
+    },
+    {
+      "id": "S51",
+      "titre": "DNB 2021, dictée : Chateaubriand, Mémoires d'outre-tombe (sujet officiel, ministère de l'Éducation nationale)",
+      "url": "https://eduscol.education.fr/sites/default/files/document/21genfrdme1pdf-94197.pdf"
+    },
+    {
+      "id": "S52",
+      "titre": "DNB 2022, dictée aménagée : d'après Ésope, Le moustique et le lion (sujet officiel, ministère de l'Éducation nationale)",
+      "url": "https://eduscol.education.fr/document/49559/download"
+    },
+    {
+      "id": "S53",
+      "titre": "DNB 2023, dictée : d'après George Sand, Histoire de ma vie (sujet officiel, ministère de l'Éducation nationale)",
+      "url": "https://www.education.gouv.fr/media/156257/download"
     }
   ],
   "regles": {
@@ -167,6 +182,16 @@
     },
     "leur": {
       "theme": "leur / leurs",
+      "lignes": null,
+      "sources": []
+    },
+    "quant": {
+      "theme": "quand / quant",
+      "lignes": null,
+      "sources": []
+    },
+    "ppr": {
+      "theme": "Le participe présent (-ant)",
       "lignes": null,
       "sources": []
     }
@@ -636,6 +661,42 @@
             "Les {vieilles|adj} maisons que nous avons {visitées|pc} {sont|son_sont|son} {fermées|pe}.",
             "Elle {voulut|ps} savoir {quelle|quelle_quelle|qu'elle} route ses amis {prirent|ps}.",
             "Ses {chevaux|plx} {sont|son_sont|son} fatigués et {leur|leur} cavalier {est|et_est_es|et} {inquiet|att}."
+          ]
+        }
+      ]
+    },
+    {
+      "key": "expert",
+      "label": "Niveau Expert",
+      "dictees": [
+        {
+          "id": "dx-01",
+          "titre": "Brevet 2021 : Chateaubriand",
+          "objectif": "Mémoires d'outre-tombe (1848-1850) : l'imparfait, le participe présent et l'accord des adjectifs",
+          "phrases": [
+            "La nuit, je {n'apercevais|imp} qu'un petit morceau du ciel et quelques étoiles.",
+            "Des chouettes, {voletant|ppr} d'une tour à l'autre, passant et repassant entre la lune et moi, {dessinaient|imp} sur mes rideaux l'ombre {mobile|adj} de leurs ailes.",
+            "Relégué dans l'endroit le plus {désert|adj}, à l'ouverture des galeries, je ne {perdais|imp} pas un murmure des ténèbres."
+          ]
+        },
+        {
+          "id": "dx-02",
+          "titre": "Brevet 2022 : Ésope",
+          "objectif": "Le moustique et le lion : le passé simple, ses/ces, le participe",
+          "phrases": [
+            "Et, sonnant de la trompe, le moustique {fondit|ps} sur lui, mordant le museau {dépourvu|adj} de poil autour des narines.",
+            "Quant au lion, il se {déchirait|imp} de {ses|cs} propres griffes, jusqu'à ce qu'il renonce au combat.",
+            "Le moustique, ayant {vaincu|pc} le lion, {sonna|ps} de la trompe, entonna un chant de victoire, et {prit|ps} son envol."
+          ]
+        },
+        {
+          "id": "dx-03",
+          "titre": "Brevet 2023 : George Sand",
+          "objectif": "Histoire de ma vie (1855) : ou / où, le participe, l'imparfait",
+          "phrases": [
+            "Je me souviens d'un jour d'automne {où|ou_ou|ou}, le dîner étant servi, la nuit s'était {faite|pe} dans la chambre.",
+            "On nous {appelait|imp} pour {dîner|er_e} et nous n'entendions rien.",
+            "Je {sortais|imp} d'une hallucination {complète|adj} et il me {coûtait|imp} d'en sortir si brusquement."
           ]
         }
       ]
