@@ -196,7 +196,7 @@ function leconDe(theme) {
     const carte = plusCourte(theme.cartes.filter(c => c.answer === mot));
     return { carte, reponse: mot, juste: mot === oui, test: carte.temoin, mot: carte.temoinMot };
   });
-  return { theme: theme.theme, mode: 'juger', question: theme.question, rule: theme.rule, etapes: theme.lecon, mot: premiere.temoinMot, oui, non, exemples, agir: carteAgir(theme, exemples) };
+  return { theme: theme.theme, mode: 'juger', question: theme.question, rule: theme.rule, etapes: theme.lecon, mot: premiere.temoinMot, ecrit: premiere.ecrit, oui, non, exemples, agir: carteAgir(theme, exemples) };
 }
 
 class DuelGame {

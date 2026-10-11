@@ -67,6 +67,7 @@ function carteDe(donnees, item) {
     majeure: !!regles.majeure,
     ordre: regles.ordre || 99,
     paire: regles.witnessPair || null,
+    ecrit: !!regles.ecrit,   // témoin qui se juge à l'écrit (l'oreille ne distingue pas : es / est)
     text: item.text,
     complete: remplir(donnees, item, item.answer),
     choices: item.choices.slice(),
@@ -93,10 +94,10 @@ function carteDe(donnees, item) {
   const nonMot = item.choices.find(c => !regles.confirms.includes(c));
   base.truc = {
     mots: [tests[0].mot],
-    texte: 'Je mets « ' + tests[0].mot + ' » à la place du trou et je lis la phrase. Si ça sonne juste, j\'écris « ' + ouiMot +
-      ' ». Si ça ne sonne pas juste, j\'écris « ' + nonMot + ' ».'
+    texte: 'Je mets « ' + tests[0].mot + ' » à la place du trou et je lis la phrase. ' + (regles.ecrit ? 'Si la phrase est correcte' : 'Si ça sonne juste') + ', j\'écris « ' + ouiMot +
+      ' ». ' + (regles.ecrit ? 'Sinon' : 'Si ça ne sonne pas juste') + ', j\'écris « ' + nonMot + ' ».'
   };
-  base.conclusion = (tests[0].juste ? 'Ça sonne juste' : 'Ça ne sonne pas juste') + ' : on écrit « ' + item.answer + ' ».';
+  base.conclusion = (regles.ecrit ? (tests[0].juste ? 'La phrase est correcte' : 'La phrase n\'est pas correcte') : (tests[0].juste ? 'Ça sonne juste' : 'Ça ne sonne pas juste')) + ' : on écrit « ' + item.answer + ' ».';
 
   const oui = item.choices.find(c => regles.confirms.includes(c));
   const non = item.choices.find(c => !regles.confirms.includes(c));
@@ -106,7 +107,7 @@ function carteDe(donnees, item) {
     temoin: test.phrase,
     temoinMot: test.mot,
     options: [
-      { label: 'Oui, ça sonne juste', value: oui },
+      { label: regles.ecrit ? 'Oui, elle est correcte' : 'Oui, ça sonne juste', value: oui },
       { label: 'Non', value: non }
     ]
   });

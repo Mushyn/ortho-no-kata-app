@@ -80,7 +80,7 @@ class DuelApp {
     this.zoneAide.replaceChildren(el('div', { class: 'bloc coup-de-pouce' },
       el('p', {}, carte.tests.length > 1
         ? 'Je dis la phrase avec « ' + mots[0] + ' », puis avec « ' + mots[1] + ' » : laquelle sonne juste ?'
-        : 'Je mets « ' + mots[0] + ' » à la place du trou. Ça sonne juste ?'),
+        : 'Je mets « ' + mots[0] + ' » à la place du trou. ' + (carte.ecrit ? 'La phrase est correcte ?' : 'Ça sonne juste ?')),
       carte.tests.map(t => el('div', { class: 'test' }, el('span', { class: 'phrase-ex' }, surligne(t.phrase, t.mot))))));
   }
 

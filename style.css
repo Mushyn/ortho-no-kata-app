@@ -1,4 +1,4 @@
-/* Ortho no Kata : habillage à ambiances (arcade, sport, dojo).
+/* Ortho no Kata : habillage à ambiances (arcade, sport, sakura).
    Toutes les couleurs et formes passent par des variables : une ambiance = un bloc de variables.
    Vocabulaire des variables :
      --papier  = surface des cartes et des boutons     --fond = fond de la page
@@ -39,20 +39,30 @@
   --ombre-bouton: 0 5px 0 var(--bord);
 }
 
-/* ── Ambiance 3 : dojo : calme, encre noire et sceau vermillon ───────────── */
-:root[data-theme="dojo"] {
-  --fond: #f2eee3; --fond-image: none;
-  --papier: #faf7ef; --encre: #16120f; --encre-douce: #675f55;
-  --bord: #16120f; --bord-doux: #ddd5c4;
-  --accent: #16120f; --accent-texte: #f2eee3; --accent-ombre: #000000;
-  --vert: #2a6a49; --vert-fond: #e1eee6; --rouge: #b03a22; --rouge-fond: #f6e3dd;
-  --surligneur: #ecd2a8; --etoile: #d7262b; --tampon: #d7262b; --tampon-rot: -6deg;
-  --titre: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", Georgia, serif;
-  --titre-style: normal; --titre-poids: 700;
-  --rayon: 4px; --epais: 2px;
-  --ombre-carte: none;
-  --ombre-bouton: 0 3px 0 var(--bord);
+/* ── Ambiance 3 : sakura : kawaii, parquet, bambou, pétales et pagode ─────── */
+:root[data-theme="sakura"] {
+  --fond: #f7e3c3;
+  --fond-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='190'%3E%0A%3Cg stroke='%23c9847f' stroke-width='2' stroke-linejoin='round'%3E%0A%3Crect x='62' y='6' width='26' height='8' rx='2' fill='%23f2a9a4'/%3E%0A%3Cpath d='M75 14 L75 4' /%3E%0A%3Cpath d='M50 56 Q75 34 100 56 L110 62 H40Z' fill='%23f2a9a4'/%3E%3Crect x='56' y='56' width='38' height='24' fill='%23fff1e6'/%3E%0A%3Cpath d='M36 98 Q75 70 114 98 L126 106 H24Z' fill='%23f2a9a4'/%3E%3Crect x='46' y='98' width='58' height='26' fill='%23fff1e6'/%3E%0A%3Cpath d='M20 144 Q75 108 130 144 L146 154 H4Z' fill='%23f2a9a4'/%3E%3Crect x='34' y='144' width='82' height='30' fill='%23fff1e6'/%3E%0A%3Crect x='64' y='150' width='22' height='24' rx='2' fill='%23e8a07a'/%3E%3Crect x='0' y='174' width='150' height='10' rx='3' fill='%23e0b48a'/%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='260'%3E%0A%3Crect x='14' y='-2' width='16' height='132' rx='3' fill='%23a9d8a0' stroke='%237fbd7a' stroke-width='2'/%3E%0A%3Crect x='14' y='132' width='16' height='130' rx='3' fill='%23a9d8a0' stroke='%237fbd7a' stroke-width='2'/%3E%0A%3Crect x='11' y='124' width='22' height='9' rx='4' fill='%238cc886' stroke='%236aab68' stroke-width='1.5'/%3E%0A%3Crect x='11' y='252' width='22' height='9' rx='4' fill='%238cc886' stroke='%236aab68' stroke-width='1.5'/%3E%0A%3Cpath d='M30 70 q14 -10 20 -26 q-14 4 -20 26z' fill='%23bfe5b4' stroke='%237fbd7a' stroke-width='1.2'/%3E%0A%3Cpath d='M30 190 q14 -10 20 -26 q-14 4 -20 26z' fill='%23bfe5b4' stroke='%237fbd7a' stroke-width='1.2'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='260'%3E%0A%3Crect x='14' y='-2' width='16' height='132' rx='3' fill='%23a9d8a0' stroke='%237fbd7a' stroke-width='2'/%3E%0A%3Crect x='14' y='132' width='16' height='130' rx='3' fill='%23a9d8a0' stroke='%237fbd7a' stroke-width='2'/%3E%0A%3Crect x='11' y='124' width='22' height='9' rx='4' fill='%238cc886' stroke='%236aab68' stroke-width='1.5'/%3E%0A%3Crect x='11' y='252' width='22' height='9' rx='4' fill='%238cc886' stroke='%236aab68' stroke-width='1.5'/%3E%0A%3Cpath d='M14 70 q-14 -10 -20 -26 q14 4 20 26z' fill='%23bfe5b4' stroke='%237fbd7a' stroke-width='1.2'/%3E%0A%3Cpath d='M14 190 q-14 -10 -20 -26 q14 4 20 26z' fill='%23bfe5b4' stroke='%237fbd7a' stroke-width='1.2'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='560'%3E%3Cg transform='translate(70 80) rotate(10) scale(1)'%3E%3Cg fill='%23ffc4d6' stroke='%23f59ab8' stroke-width='1.2'%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(0)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(72)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(144)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(216)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(288)'/%3E%3C/g%3E%3Ccircle r='3' fill='%23ff8fb1'/%3E%3C/g%3E%3Cg transform='translate(360 190) rotate(-20) scale(0.8)'%3E%3Cg fill='%23ffc4d6' stroke='%23f59ab8' stroke-width='1.2'%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(0)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(72)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(144)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(216)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(288)'/%3E%3C/g%3E%3Ccircle r='3' fill='%23ff8fb1'/%3E%3C/g%3E%3Cg transform='translate(190 380) rotate(35) scale(0.9)'%3E%3Cg fill='%23ffc4d6' stroke='%23f59ab8' stroke-width='1.2'%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(0)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(72)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(144)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(216)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(288)'/%3E%3C/g%3E%3Ccircle r='3' fill='%23ff8fb1'/%3E%3C/g%3E%3Cg transform='translate(400 500) rotate(0) scale(0.6)'%3E%3Cg fill='%23ffc4d6' stroke='%23f59ab8' stroke-width='1.2'%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(0)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(72)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(144)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(216)'/%3E%3Cellipse cx='0' cy='-9' rx='6' ry='9' transform='rotate(288)'/%3E%3C/g%3E%3Ccircle r='3' fill='%23ff8fb1'/%3E%3C/g%3E%3Cellipse cx='250' cy='60' rx='5' ry='8' fill='%23ffd3e1' transform='rotate(30 250 60)'/%3E%3Cellipse cx='120' cy='250' rx='5' ry='8' fill='%23ffd3e1' transform='rotate(-40 120 250)'/%3E%3Cellipse cx='330' cy='330' rx='5' ry='8' fill='%23ffd3e1' transform='rotate(60 330 330)'/%3E%3Cellipse cx='40' cy='450' rx='5' ry='8' fill='%23ffd3e1' transform='rotate(10 40 450)'/%3E%3Cellipse cx='270' cy='520' rx='5' ry='8' fill='%23ffd3e1' transform='rotate(-20 270 520)'/%3E%3Cellipse cx='430' cy='60' rx='5' ry='8' fill='%23ffd3e1' transform='rotate(50 430 60)'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='80'%3E%0A%3Crect width='160' height='80' fill='%23f7e3c3'/%3E%0A%3Crect width='80' height='40' fill='%23f6e0bd'/%3E%3Crect x='80' y='40' width='80' height='40' fill='%23f6e0bd'/%3E%0A%3Cg fill='none' stroke='%23ebcfa6' stroke-width='2'%3E%3Cpath d='M0 1H160M0 41H160M80 0V40M40 40V80M120 40V80'/%3E%3C/g%3E%0A%3Cg fill='none' stroke='%23f0d7b2' stroke-width='1' stroke-linecap='round'%3E%3Cpath d='M8 12H50M30 28H70M96 14H140M90 52H130M20 58H34M130 66H150'/%3E%3C/g%3E%3C/svg%3E");
+  --fond-pos: right 10px bottom 96px, left top, right top, 0 0, 0 0;
+  --fond-taille: 92px auto, 26px auto, 26px auto, 520px auto, 130px auto;
+  --fond-rep: no-repeat, repeat-y, repeat-y, repeat, repeat;
+  --papier: #fffaf4; --encre: #3d2528; --encre-douce: #8a5f66;
+  --bord: #ec8fb0; --bord-doux: #f6d5df;
+  --accent: #d94a80; --accent-texte: #ffffff; --accent-ombre: #a32a5a;
+  --vert: #36874f; --vert-fond: #e2f4e4; --rouge: #c4344c; --rouge-fond: #fde3e8;
+  --surligneur: #ffc9db; --etoile: #ffb21e; --tampon: #d94a80; --tampon-rot: -5deg;
+  --titre: ui-rounded, "Hiragino Maru Gothic ProN", "SF Pro Rounded", "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;
+  --titre-style: normal; --titre-poids: 800;
+  --rayon: 22px; --epais: 3px;
+  --ombre-carte: 0 6px 0 rgba(217, 74, 128, .22);
+  --ombre-bouton: 0 5px 0 #f1b3c9;
 }
+:root[data-theme="sakura"] h1, :root[data-theme="sakura"] h2, :root[data-theme="sakura"] .logo-nom { text-shadow: 0 0 6px #fff4e3, 0 0 12px #fff4e3, 0 0 3px #fff4e3; }
+:root[data-theme="sakura"] h1::after { content: " 🌸"; font-size: .8em; }
 
 :root { --corps: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 
@@ -62,6 +72,7 @@ body {
   margin: 0; color: var(--encre); font: 19px/1.5 var(--corps);
   height: 100vh; height: 100dvh; overflow: hidden;
   background-color: var(--fond); background-image: var(--fond-image); background-attachment: fixed;
+  background-position: var(--fond-pos, 0 0); background-size: var(--fond-taille, auto); background-repeat: var(--fond-rep, repeat);
 }
 /* Une page = un écran : fit.js règle --z pour que tout tienne en hauteur */
 main {
@@ -147,6 +158,8 @@ button, .bouton { font: inherit; cursor: pointer; color: var(--encre); -webkit-t
 
 /* Listes (scores) */
 .liste { list-style: none; margin: 0; padding: 0; background: var(--papier); border-radius: var(--rayon); border: 2px solid var(--bord); overflow: hidden; }
+/* Les listes ne se compressent pas : si ça ne tient pas, la page défile */
+.liste, .seances { flex: none; }
 .liste li { border-top: 2px solid var(--bord-doux); }
 .liste li:first-child { border-top: 0; }
 .ligne-theme { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; min-height: 64px; }

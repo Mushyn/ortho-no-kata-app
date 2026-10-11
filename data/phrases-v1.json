@@ -31,12 +31,12 @@
     },
     "on_ont": {
       "label": "on / ont",
-      "question": "Je mets « avaient » à la place : ça sonne juste ?",
-      "witness": "avaient",
+      "question": "Je mets « il » à la place : ça sonne juste ?",
+      "witness": "il",
       "confirms": [
-        "ont"
+        "on"
       ],
-      "otherwise": "on",
+      "otherwise": "ont",
       "sources": [
         "S1",
         "S7"
@@ -46,13 +46,13 @@
       "lecon": {
         "situer": [
           "« on » et « ont » se prononcent pareil.",
-          "« on » veut dire quelqu'un, comme il ou elle. « ont », c'est le verbe avoir pour plusieurs personnes : ils ont, elles ont."
+          "« on » veut dire quelqu'un, comme il ou elle, ou parfois nous : on est fatigués (= nous sommes fatigués). « ont », c'est le verbe avoir pour plusieurs personnes : ils ont, elles ont."
         ],
         "observer": [
-          "On remplace par « avaient » et on prononce la phrase.",
-          "Si elle sonne juste, c'est le verbe avoir : j'écris « ont ». Sinon, j'écris « on »."
+          "On remplace par « il » et on prononce la phrase (on est fatigués : il est fatigué, ça sonne juste ; ils ont chaud : ils il chaud, non).",
+          "Si elle sonne juste, c'est « on » : j'écris « on ». Sinon, c'est le verbe avoir : j'écris « ont »."
         ],
-        "reflechir": "Voici deux phrases. On essaie « avaient » dans chacune."
+        "reflechir": "Voici deux phrases. On essaie « il » dans chacune."
       }
     },
     "et_est_es": {
@@ -85,7 +85,7 @@
         },
         "es|est": {
           "theme": "es / est",
-          "question": "Je mets « étais » à la place : ça sonne juste ?",
+          "question": "Je mets « étais » à la place : la phrase est correcte ?",
           "witness": "étais",
           "confirms": [
             "es"
@@ -98,11 +98,12 @@
               "« es » ne va qu'avec TU : tu es. « est » va avec il, elle, on : il est."
             ],
             "observer": [
-              "On remplace par « étais » et on prononce la phrase : tu étais, ça marche ; il étais, non.",
-              "Si elle sonne juste, c'est le verbe être avec tu : j'écris « es ». Sinon, j'écris « est »."
+              "« étais » et « était » se prononcent pareil : ici l'oreille ne peut pas aider. On regarde le mot juste avant : tu étais, c'est correct ; il étais, non (avec il, on écrit « était »).",
+              "Si c'est correct (c'est tu), j'écris « es ». Sinon, j'écris « est »."
             ],
-            "reflechir": "Voici deux phrases. On essaie « étais » dans chacune."
-          }
+            "reflechir": "Voici deux phrases. On essaie « étais » dans chacune, et on regarde le mot d'avant."
+          },
+          "ecrit": true
         }
       },
       "ordre": 2,

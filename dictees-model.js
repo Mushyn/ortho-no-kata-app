@@ -73,11 +73,12 @@ function niveauxDe(donnees, phrases) {
 // « Demain, nous irons. » devient « Demain, virgule, nous irons, point. »
 const PONCTUATION_DITE = {
   ',': ', virgule, ', '.': ', point. ', '?': ", point d'interrogation. ",
-  '!': ", point d'exclamation. ", ':': ', deux points, ', ';': ', point-virgule, '
+  '!': ", point d'exclamation. ", ':': ', deux points, ', ';': ', point-virgule, ',
+  '\u00ab': ', ouvrez les guillemets, ', '\u00bb': ', fermez les guillemets, '
 };
 function dicter(texte) {
   const propre = String(texte).normalize('NFC').replace(/[\u2019\u2018`\u00b4]/g, "'");
-  return propre.replace(/\s*([,.?!:;])\s*/g, (m, signe) => PONCTUATION_DITE[signe]).trim();
+  return propre.replace(/\s*([,.?!:;\u00ab\u00bb])\s*/g, (m, signe) => PONCTUATION_DITE[signe]).trim();
 }
 
 // ── Comparaison mot à mot ──────────────────────────────────────────────────

@@ -12,7 +12,7 @@ class ScoresApp {
     noms.set('tout', 'Mélange');
     noms.set(MotsModel.CLE_MOTS, 'Les mots');
     const niveauxDictee = dictees ? DicteesModel.niveauxDe(dictees, donnees) : [];
-    niveauxDictee.forEach(n => noms.set(DicteesModel.cleDeThemeDictee(n.key), 'Dictée ' + n.key));
+    niveauxDictee.forEach(n => noms.set(DicteesModel.cleDeThemeDictee(n.key), 'Dictées : ' + n.label));
     const cartesMots = mots ? MotsModel.cartesDeMots(mots) : [];
 
     const points = DuelModel.pointsTotal(historique);
@@ -70,7 +70,7 @@ class ScoresApp {
     const pct = m.total ? Math.round(100 * m.acquises / m.total) : 0;
     return el('li', {}, el('div', { class: 'ligne-theme' },
       el('span', { style: 'flex:1' },
-        el('span', { class: 'nom-theme' }, 'Dictée ' + niveau.key), el('br'),
+        el('span', { class: 'nom-theme' }, 'Dictées : ' + niveau.label), el('br'),
         el('span', { class: 'etat' }, m.vues === 0 ? 'À découvrir' : m.acquises + ' phrases acquises sur ' + m.total),
         el('div', { class: 'barre', role: 'img', 'aria-label': pct + ' pour cent acquis' }, el('i', { style: 'width:' + pct + '%' }))),
       etoiles(DuelModel.etoilesDe(m, DuelModel.seancesDuTheme(historique, DicteesModel.cleDeThemeDictee(niveau.key))))));

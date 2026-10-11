@@ -101,7 +101,7 @@ class LeconApp {
       } else {
         bouton.disabled = true; bouton.classList.add('rate');
         verdict.replaceChildren(el('div', { class: 'verdict rate' }, el('b', {}, 'Pas celle-là. '),
-          l.mode === 'juger' ? 'Relis la phrase à voix basse, avec le mot à la place du trou.' : 'Relis les deux phrases à voix basse et choisis celle qui sonne juste.'));
+          l.mode === 'juger' ? (l.ecrit ? 'Relis la phrase, avec le mot à la place du trou, et regarde le mot juste avant.' : 'Relis la phrase à voix basse, avec le mot à la place du trou.') : 'Relis les deux phrases à voix basse et choisis celle qui sonne juste.'));
       }
     };
 
@@ -111,7 +111,7 @@ class LeconApp {
         el('div', { class: 'phrase-ex gros' }, this.phraseAvecTrou(carte)),
         el('p', { class: 'texte' }, 'On met « ', el('b', {}, carte.temoinMot), ' » à la place du trou :'),
         el('div', { class: 'phrase-ex gros test-agir' }, surligne(carte.temoin, carte.temoinMot)),
-        el('p', { class: 'texte' }, 'Est-ce que ça sonne juste ?'));
+        el('p', { class: 'texte' }, l.ecrit ? 'Est-ce que la phrase est correcte ?' : 'Est-ce que ça sonne juste ?'));
       carte.options.forEach(o => reponses.append(el('button', { type: 'button', class: 'bouton', onclick: ev => repondre(o, ev.currentTarget) }, o.label)));
     } else {
       zone.append(
@@ -134,7 +134,7 @@ class LeconApp {
       el('div', { class: 'phrase-ex' }, this.phraseAvecTrou(ex.carte)),
       el('div', { class: 'test' }, el('span', { class: 'marque ' + (ex.juste ? 'oui' : 'non') }, ex.juste ? '✓' : '✗'),
         el('span', {}, surligne(ex.test, ex.mot))),
-      el('div', {}, ex.juste ? 'Ça sonne juste : ' : 'Ça ne sonne pas juste : ', el('b', {}, ex.reponse)));
+      el('div', {}, ex.carte.ecrit ? (ex.juste ? 'Elle est correcte : ' : 'Elle n\'est pas correcte : ') : (ex.juste ? 'Ça sonne juste : ' : 'Ça ne sonne pas juste : '), el('b', {}, ex.reponse)));
   }
 
   exempleChoisir(ex) {

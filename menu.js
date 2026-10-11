@@ -158,7 +158,7 @@ class MenuApp {
           el('div', { class: 'ligne' },
             bouton('Arcade', reglages.theme === 'arcade', () => this.ambiance('arcade')),
             bouton('Sport', reglages.theme === 'sport', () => this.ambiance('sport')),
-            bouton('Dojo', reglages.theme === 'dojo', () => this.ambiance('dojo')))),
+            bouton('Sakura 🌸', reglages.theme === 'sakura' || reglages.theme === 'dojo', () => this.ambiance('sakura')))),
         el('div', { class: 'ligne' },
           bouton('5 cartes', reglages.nombre === 5, () => regler({ nombre: 5 })),
           bouton('10 cartes', reglages.nombre === 10, () => regler({ nombre: 10 }))),

@@ -11,6 +11,11 @@
       "id": "S49",
       "titre": "Studelio : dictées courtes de niveau 5e (objectifs et progression seulement, phrases originales)",
       "url": "https://studelio.com/dictees-courtes-niveau-5e-vacances/"
+    },
+    {
+      "id": "S50",
+      "titre": "Studelio : 15 dictées courtes de 4e (objectifs et progression seulement, phrases originales)",
+      "url": "https://studelio.com/15-dictees-courtes-4e-francais/"
     }
   ],
   "regles": {
@@ -147,6 +152,21 @@
     },
     "conn": {
       "theme": "Les mots qui relient les idées",
+      "lignes": null,
+      "sources": []
+    },
+    "pc": {
+      "theme": "Le participe passé avec avoir",
+      "lignes": null,
+      "sources": []
+    },
+    "coul": {
+      "theme": "Les adjectifs de couleur",
+      "lignes": null,
+      "sources": []
+    },
+    "leur": {
+      "theme": "leur / leurs",
       "lignes": null,
       "sources": []
     }
@@ -460,6 +480,162 @@
             "Mes sœurs {sont|son_sont|son} {rentrées|pe} {et|et_est_es|est} elles {ont|on_ont|on} faim.",
             "Goûte {ces|cs} {gâteaux|plx} {chauds|adj} !",
             "Demain, vous {chanterez|futur} et {on|on_ont|ont} {dansera|futur}."
+          ]
+        }
+      ]
+    },
+    {
+      "key": "3",
+      "label": "Niveau 3",
+      "dictees": [
+        {
+          "id": "d3-01",
+          "titre": "La gare de nuit",
+          "objectif": "Imparfait ou passé simple dans un récit",
+          "phrases": [
+            "Il {pleuvait|imp} depuis l'aube quand la porte {s'ouvrit|ps}.",
+            "Les habitants {dormaient|imp} encore, un cri {retentit|ps}.",
+            "Marie {courait|imp} sur le quai et {sauta|ps} dans le wagon."
+          ]
+        },
+        {
+          "id": "d3-02",
+          "titre": "Le roi et la tour",
+          "objectif": "Le passé simple des verbes du 3e groupe",
+          "phrases": [
+            "Le roi {prit|ps} son épée et {partit|ps} au galop.",
+            "Ils {virent|ps} la tour et {surent|ps} qu'ils étaient arrivés.",
+            "Elle {voulut|ps} parler, mais personne ne l'{entendit|ps}."
+          ]
+        },
+        {
+          "id": "d3-03",
+          "titre": "Dans la tempête",
+          "objectif": "Passé simple irrégulier et rythme du récit",
+          "phrases": [
+            "Nous {courûmes|ps} vers l'abri, puis nous {fîmes|ps} halte.",
+            "Soudain, la foudre {tomba|ps} et le sol {trembla|ps}.",
+            "Ils {vinrent|ps} nous aider dès l'aube."
+          ]
+        },
+        {
+          "id": "d3-04",
+          "titre": "Une conversation",
+          "objectif": "La ponctuation du dialogue",
+          "phrases": [
+            "« Viens ici ! » {cria|ps} Théo.",
+            "Léa {répondit|ps} : « Je {suis|sv} prête. »",
+            "« Nous {partons|sv} demain, annonça le guide, soyez à l'heure. »"
+          ]
+        },
+        {
+          "id": "d3-05",
+          "titre": "Le jardin de grand-mère",
+          "objectif": "Le participe passé avec avoir et le COD placé avant",
+          "phrases": [
+            "Les fleurs que j'ai {cueillies|pc} sentent bon.",
+            "Voici la lettre qu'il a {écrite|pc} hier.",
+            "Les images que nous avons {regardées|pc} étaient très belles."
+          ]
+        },
+        {
+          "id": "d3-06",
+          "titre": "Dans la cour",
+          "objectif": "L'accord du verbe quand le sujet est loin",
+          "phrases": [
+            "Les élèves de la classe voisine {chantent|sv} fort.",
+            "Le chien de mes voisins, énervé par le bruit, {aboie|sv} sans cesse.",
+            "Les fleurs que ma sœur arrose chaque matin {poussent|sv} vite."
+          ]
+        },
+        {
+          "id": "d3-07",
+          "titre": "Sur la table",
+          "objectif": "Le sujet placé après le verbe, le sujet collectif",
+          "phrases": [
+            "Sur la table {sont|son_sont|son} {posés|pe} deux verres.",
+            "Dans le jardin {jouent|sv} les enfants.",
+            "Une foule de touristes {envahit|sv} la place."
+          ]
+        },
+        {
+          "id": "d3-08",
+          "titre": "Les cousines",
+          "objectif": "L'accord dans une série d'adjectifs féminins",
+          "phrases": [
+            "Mes {petites|adj} cousines {blondes|adj} et {rieuses|adj} arrivent demain.",
+            "Les {longues|adj} routes {sinueuses|adj} et {étroites|adj} montent vers le village.",
+            "Ces {vieilles|adj} maisons {abandonnées|adj} et {silencieuses|adj} font peur."
+          ]
+        },
+        {
+          "id": "d3-09",
+          "titre": "Les vêtements",
+          "objectif": "Les adjectifs de couleur",
+          "phrases": [
+            "Elle porte une jupe {rouge|coul} et des bottes {marron|coul}.",
+            "Il a des yeux {noirs|coul} et des cheveux {châtains|coul}.",
+            "Les taxis {jaunes|coul} et les bus {rouges|coul} roulent lentement."
+          ]
+        },
+        {
+          "id": "d3-10",
+          "titre": "Un drôle de portrait",
+          "objectif": "Plusieurs adjectifs qui décrivent le même nom",
+          "phrases": [
+            "Mon oncle est un homme {grand|adj}, {mince|adj} et {discret|adj}.",
+            "Sa {petite|adj} sœur {têtue|adj} et {bavarde|adj} rit souvent.",
+            "Les {vieux|adj} arbres {noueux|adj} et {tordus|adj} bordent le chemin."
+          ]
+        },
+        {
+          "id": "d3-11",
+          "titre": "Sur le toit",
+          "objectif": "et / est, a / à, ou / où",
+          "phrases": [
+            "Le chat {est|et_est_es|et} sur le toit {et|et_est_es|est} il {a|a_a|à} peur.",
+            "Dis-moi {où|ou_ou|ou} sont {ses|cs} parents.",
+            "Veux-tu du thé {ou|ou_ou|où} du café ?"
+          ]
+        },
+        {
+          "id": "d3-12",
+          "titre": "Un secret",
+          "objectif": "on / ont, ce / se, quelle / qu'elle",
+          "phrases": [
+            "Elles {ont|on_ont|on} dit {qu'elle|quelle_quelle|quelle} viendrait demain.",
+            "Je me demande {quelle|quelle_quelle|qu'elle} robe elle choisira.",
+            "Ce soir, {on|on_ont|ont} {se|cese} couche tôt."
+          ]
+        },
+        {
+          "id": "d3-13",
+          "titre": "Le déménagement",
+          "objectif": "leur / leurs",
+          "phrases": [
+            "Les enfants ont rangé {leurs|leur} jouets dans {leur|leur} chambre.",
+            "Je {leur|leur} ai donné {leurs|leur} cahiers.",
+            "Les voisins ont vendu {leur|leur} voiture et {leurs|leur} vélos."
+          ]
+        },
+        {
+          "id": "d3-14",
+          "titre": "Après la fête",
+          "objectif": "Les temps composés et l'accord du participe",
+          "phrases": [
+            "Les clés que tu as {perdues|pc} sont {retrouvées|pe}.",
+            "Mes cousines sont {venues|pe} et {ont|on_ont|on} {mangé|er_e} chez nous.",
+            "Ils sont {descendus|pe} et ont {salué|er_e} le gardien."
+          ]
+        },
+        {
+          "id": "d3-15",
+          "titre": "Le grand bilan",
+          "objectif": "Tout ce qu'on a appris",
+          "phrases": [
+            "Les {vieilles|adj} maisons que nous avons {visitées|pc} {sont|son_sont|son} {fermées|pe}.",
+            "Elle {voulut|ps} savoir {quelle|quelle_quelle|qu'elle} route ses amis {prirent|ps}.",
+            "Ses {chevaux|plx} {sont|son_sont|son} fatigués et {leur|leur} cavalier {est|et_est_es|et} {inquiet|att}."
           ]
         }
       ]
